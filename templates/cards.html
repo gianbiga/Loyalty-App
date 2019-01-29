@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="../styles/mobile.css">
+  <link rel="stylesheet" href="../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../styles/cards.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+</head>
+
+<style type="text/css">
+body {
+    color: #000000 !important;
+    background: #ffffff !important;
+}
+</style>
+
+<body>
+
+
+  <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+    <div class="w3-container w3-theme-d2">
+      <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+      <br>
+      <div class="">
+        <img class="w3-circle done" src="../images/user.png" alt="avatar">
+      </div>
+    </div>
+    <a class="w3-bar-item w3-button" href="voucher.html">Início</a>
+    <a class="w3-bar-item w3-button" href="games.html">Games</a>
+    <a class="w3-bar-item w3-button" href="extrato.html">Extrato</a>
+    <a class="w3-bar-item w3-button" href="rating.html">Pesquisas</a>
+    <a class="w3-bar-item w3-button" href="cards.html">Especial</a>
+  </nav>
+
+
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+    <h2 class="w3-bar-item">Especial</h2>
+      <img src="../images/stmarche.png" class="logo" style="margin-top: -30px;">
+  </header>
+
+  <div class="w3-container extrato" style="margin-top:65px">
+
+      <div class="w3-cell-row">
+          <!-- Cards-->
+          <div class="card card--small hidden" id="card_sommelier">
+            <div style="background-image: url(../images/sommelier.png)" class="card__image"></div>
+            <h2 class="card__title">Sommelier Eataly</h2>
+            <span class="card__subtitle">Curso de Sommelier de Vinhos no Eataly</span>
+            <p class="card__text">Curso de Sommelier de Vinhos no Eataly</p>
+            <div class="card__action-bar">
+              <button class="card__button" style="float: right;">SAIBA MAIS</button>   
+            </div>
+          </div>  
+      </div>
+
+        <div class="w3-cell-row">
+            <!-- Cards-->
+            <div class="card card--small hidden" id="card_clube_vinho">
+              <div style="background-image: url(../images/cursovinho.jpg);background-position-x: -110px;" class="card__image"></div>
+              <h2 class="card__title">Clube de Vinhos</h2>
+              <span class="card__subtitle">Desconto de 15% na Assinatura do Clube</span>
+              <p class="card__text">Curso de Sommelier de Vinhos no Eataly</p>
+              <div class="card__action-bar">
+                <button class="card__button" style="float: right;">SAIBA MAIS</button>   
+              </div>
+            </div>  
+        </div>
+   </div>
+
+  <footer class="w3-container w3-bottom w3-theme w3-margin-top">
+    <h3 id="">Categoria <strong style="float: right; margin-right: 30px;" id="saldo"></strong> </h3>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../scripts/moment.min.js"> </script>
+  <script src="../scripts/cards.js" type="text/javascript" ></script>
+  <script src="../scripts/sms.js"> </script>
+  <script src="../scripts/script.js"> </script>
+  <script>
+  closeSidebar();
+  function openSidebar() {
+      document.getElementById("mySidebar").style.display = "block";
+  }
+  function closeSidebar() {
+      document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>
+</body>
+</html>
+

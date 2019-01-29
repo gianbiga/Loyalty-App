@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: A responsive product grid layout with touch-friendly Flickity galleries and Isotope-powered filter functionality." />
+  <meta name="keywords" content="blueprint, template, layout, grid, responsive, products, store, filter, isotope, flickity" />
+
+  <!-- CSS -->
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/colors.css">
+<link rel="stylesheet" type="text/css" href="../styles/loader.css">
+<link rel="stylesheet" type="text/css" href="../styles/environment.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/util.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/main.css">
+  
+
+</head>
+
+<style type="text/css">
+
+.login-form input[type="submit"] {
+	color: #ffffff !important;
+    background-color: #b9be10 !important;
+    border-color: #b9be10 !important;
+    font-size: 22px !important;
+}
+
+body {
+    position: relative;
+    background: #f7c51c;
+    min-height: 400px;
+}
+
+	
+</style>
+
+<body class="main-background-color-app">
+
+
+	<!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <img src="../images/logo.png" class="logo2">
+    <div class="loader hide">
+		<div class="loader__ball hide"></div>
+	</div>
+  </header>
+
+  	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<form class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-16"">
+						<input id="firstname" class="input100" type="text" name="firstname" placeholder="First Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-user"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16"">
+						<input id="lastname" class="input100" type="text" name="lastname" placeholder="Last Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-user"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
+						<input id="email" class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-envelope"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input id="password" class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
+						<input id="cellphone" class="input100"  name="cellphone" placeholder="Cellphone">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-smartphone"></span>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn p-t-25">
+						<button type="button" onclick="
+							showLoading(); 
+							registerFriendMember($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(), loyaltyProgram, getURLParameters('memberID')).then(function(res){
+								showLoading();
+								console.log(getURLParameters('memberID'));
+									dumbTransaction(getURLParameters('memberID')).then(function(res2){
+
+										//Criar o usuário no OCC aqui. Você pode pegar o res.MemberNumber, que é o numero do membro do Loyalty que a promise retorna
+										localStorage.setItem('MemberID',res.MemberNumber);
+										memberNumber = localStorage.getItem('MemberID');
+
+										getSpecificMember(res.ReferredByNumber).then(function(res3){
+										console.log(res.ReferredByNumber)
+										sendSMS(res3.EmailAddress.substring(1,res.EmailAddress.length),'Seu%20amigo%20acaba%20de%20se%20registar.%20Voce%20ganhou%205%20pontos');
+										localStorage.setItem('PushPrePaid', '0');
+										localStorage.setItem('LevelPopUp', '0');
+										setTimeout(function(){location.href='voucher.html';},3000)
+										})
+
+									})
+								})" class="login100-form-btn">
+							Register
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../scripts/apis.js"></script>
+<script src="../scripts/sms.js"></script>
+<script src="../scripts/environment.js"></script>
+
+
+</body>>
+</html>

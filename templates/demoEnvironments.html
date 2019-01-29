@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../styles/creditcard/styles.css">
+  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
+  <link rel="stylesheet" type="text/css" href="../styles/loader.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+</head>
+
+
+<style type="text/css">
+body {
+  position: relative;
+  background: white;
+}
+
+</style>
+
+<body style="min-height: 250px !important">
+
+  <!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <img src="../images/logo.png" class="logo2">
+    <div class="loader hide">
+      <div class="loader__ball hide"></div>
+    </div>
+  </header>
+
+
+  <div class="list-container">
+    <div class="list-profile" onclick="location.href = 'commerceEnvironment.html'">
+      <div class="list-column-left">
+        <img class="list-image" class="fas fa-location-arrow">
+        <i class="fas fa-2x fa-shopping-cart"></i>
+      </div>
+      <div class="list-column-middle">
+        <p class="list-title">Commerce</p>
+        <p class="list-description">Catálogo de produtos, cadastro de usuário e carrinho abandonado</p>
+      </div>
+      <div class="list-column-right">
+        <p class="list-button">
+          <i class="fas fa-2x fa-chevron-circle-right" style="color: #ffd833;"></i></p>
+        </div>
+      </div>
+
+      <div class="list-profile" onclick="location.href = 'loyaltyEnvironment.html'">
+      <div class="list-column-left">
+        <img class="list-image" class="fas fa-location-arrow">
+        <i class="fas fa-2x fa-hand-holding-heart"></i>
+      </div>
+      <div class="list-column-middle">
+        <p class="list-title">Loyalty</p>
+        <p class="list-description">programa, ponto, membros e medalhas</p>
+      </div>
+      <div class="list-column-right">
+        <p class="list-button">
+          <i class="fas fa-2x fa-chevron-circle-right" style="color: #ffd833;"></i></p>
+        </div>
+      </div>
+
+     <div class="list-profile"  onclick="location.href = 'engagementEnvironment.html'">
+      <div class="list-column-left">
+        <img class="list-image" class="fas fa-location-arrow">
+        <i class="fas fa-2x fa-question-circle"></i>
+      </div>
+      <div class="list-column-middle">
+        <p class="list-title">Engagement</p>
+        <p class="list-description">Artigos e busca na Base de Conhecimento.</p>
+      </div>
+      <div class="list-column-right">
+        <p class="list-button">
+          <i class="fas fa-2x fa-chevron-circle-right" style="color: #ffd833;"></i></p>
+        </div>
+      </div>
+    </div>
+
+    <!--MENU INFERIOR-->
+    <div class="navbar secondary-background-color-app">
+      <a href="voucher.html" class="fa fa-home menu-icon"></a>
+      <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+      <a href="products.html" class="fa fa-shopping-cart menu-icon"></a>
+      <a href="service.html" class="fas fa-question menu-icon"></a>
+      <a href="profile.html" class="fas fa-user menu-icon"></a>
+    </div>
+
+    
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../scripts/apis.js"></script>
+    <script src="../scripts/environment.js"></script>
+
+
+    <script type="text/javascript">
+      function callTransactionsFake(){
+        showLoading();
+        createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '100', 'Compras na Havaianas no valor de R$100,00', '4').then(function(){
+          createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '150', 'Compras na Nespresso no valor de R$150,00', '6').then(function(){
+            createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '120', 'Compras na Livraria Cultura no valor de R$120,00', '5').then(function(){
+              createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '200', 'Compras na Rihappy no valor de R$200,00', '8').then(function(){
+                createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '130', 'Compras na Nespresso no valor de R$130,00', '6').then(function(){
+                  createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '70', 'Compras na Havaianas  no valor de R$70,00', '3').then(function(){
+                    createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '85', 'Compras na Rihappy no valor de R$85,00', '4').then(function(){
+                      createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '60', 'Compras na Nespresso no valor de R$60,00', '3').then(function(){
+                        createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '471', 'Compras no Pão de Açúcar no valor de R$471,00', '20').then(function(){
+                          createTransactionFake('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '900', 'Transferencia no Banco Money no valor de 3500 pontos', '30').then(function(){
+                            hideLoading(); 
+                          })
+                        })
+                      })
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
+      }
+    </script>
+  </body>
+  </html>
+
+

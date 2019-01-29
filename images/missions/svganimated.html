@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		svg#Capa_1 {
+		    max-height: 50px;
+		    position: relative;
+		    margin-top: 5px;
+		    margin-left: 5px;
+		    max-width: 50px;
+		    animation-name: size;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+
+	 	#path-l{
+			animation-name: bright-l;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+
+		#path-r{
+			animation-name: bright-r;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		} 
+
+		.thunder-svg {
+		    position: absolute;
+		    border-radius: 50%;
+		    background: #f7752a;
+		    width: 60px;
+		    height: 60px;
+		    -moz-box-shadow: 0 2px 5px 0px rgba(226, 87, 76, 0.3);
+		    -webkit-box-shadow: 0 2px 5px 0px rgba(226, 87, 76, 0.3);
+		    box-shadow: 0 2px 5px 0px rgba(226, 87, 76, 0.3);
+		    animation-name: size2;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes size{
+		    0% {max-height: 48px;}
+		    50% {max-height: 50px;}
+		    100% {max-height: 48px;}
+		}
+
+		@keyframes size2{
+	    0% {height: 58px;width: 58px;}
+	    50% {height: 60px;width: 60px;}
+	    100% {height: 58px;width: 58px;}
+		}
+
+	@keyframes bright-l{
+	    0% {fill: #FFC850;}
+	    50% {fill: #e4b449;}
+	    100% {fill: #FFC850;}
+	}
+
+	@keyframes bright-r{
+	    0% {fill: #FFDC64;}
+	    50% {fill: #ffe383;}
+	    100% {fill: #FFDC64;}
+	}
+	</style>
+</head>
+<body>
+	<div class="thunder-svg">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+		<path id="path-r" style="fill:#FFDC64;" d="M216.056,509.316l197.488-340.044c4.471-7.699-1.87-17.173-10.692-15.973l-131.364,17.855
+			L302.875,6.372c1.058-5.555-6.104-8.738-9.518-4.231L99.183,258.451c-5.656,7.465,0.333,18.08,9.647,17.1l144.828-15.245
+			l-47.479,245.308C205.034,511.531,213.029,514.528,216.056,509.316z"/>
+		<path id="path-l" style="fill:#FFC850;" d="M159.905,240.287c-3.627,0.29-6.036-3.675-4.108-6.76L300.976,1.241
+			c-2.16-1.709-5.56-1.819-7.619,0.899L99.183,258.45c-5.656,7.466,0.333,18.08,9.647,17.1l144.828-15.245l-47.479,245.308
+			c-0.64,3.309,1.592,5.637,4.201,6.194l81.359-257.447c3.814-12.067-5.808-24.156-18.423-23.146L159.905,240.287z"/>
+		</svg>
+	</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: A responsive product grid layout with touch-friendly Flickity galleries and Isotope-powered filter functionality." />
+  <meta name="keywords" content="blueprint, template, layout, grid, responsive, products, store, filter, isotope, flickity" />
+
+  <!-- CSS -->
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/colors.css">
+<link rel="stylesheet" type="text/css" href="../styles/loader.css">
+<link rel="stylesheet" type="text/css" href="../styles/environment.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/util.css">
+<link rel="stylesheet" type="text/css" href="../styles/login/main.css">
+  
+
+</head>
+
+<style type="text/css">
+
+.login-form input[type="submit"] {
+	color: #ffffff !important;
+    background-color: #b9be10 !important;
+    border-color: #b9be10 !important;
+    font-size: 22px !important;
+}
+
+body {
+    position: relative;
+    min-height: 400px;
+}
+
+.logo {
+    max-width: none !important;
+    position: relative;
+    width: auto;
+}
+
+	
+</style>
+
+<body class="main-background-color-app">
+
+	<!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <img src="../images/logo.png" class="logo2">
+    <div class="loader hide">
+		<div class="loader__ball hide"></div>
+	</div>
+  </header>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../styles/form/component.css" />
+<script src="../scripts/form/modernizr.custom.js"></script>
+
+	<div class="container">
+		<h1 class="title-household">Grupo Familiar</h1>
+		<section>
+			<form id="theForm" class="simform" autocomplete="off">
+				<div class="simform-inner">
+					<ol class="questions">
+						<li>
+							<span><label for="q1">Qual o nome do seu Grupo?</label></span>
+							<input id="q1" name="q1" type="text"/>
+						</li>
+						<li>
+							<span><label for="q2">Qual o nome completo da pessoa que você deseja adicionar?</label></span>
+							<input id="q2" name="q2" type="text"/>
+						</li>
+						<li>
+							<span><label for="q3">Qual o grau de parentesco da pessoa com você?</label></span>
+							<input id="q3" name="q3" list="parentesco"/>
+								<datalist id="parentesco" class="lista">
+								<option value="Conjuge">
+								<option value="Amigo">
+								<option value="Irmão/Irmã">
+								<option value="Pai/Mãe/Avós">
+								<option value="Outros">
+								</datalist>
+							</input>
+						</li>
+						<li>
+							<span><label for="q4">Qual o email dela?</label></span>
+							<input id="q4" name="q4" type="text"/>
+						</li>
+						<li>
+							<span><label for="q5">Digite o número de celular?</label></span>
+							<input id="q5" name="q5" type="text"/>
+						</li>
+						<li>
+							<span><label for="q6">Deseja compartilhar os pontos com ela?</label></span>
+							<input id="q6" name="q6" list="sharePointsYN"/>
+								<datalist id="sharePointsYN" class="lista">
+								<option value="Sim">
+								<option value="Não">
+								</datalist>
+						</li>
+					</ol><!-- /questions -->
+					<button class="submit" type="submit">Send answers</button>
+					<div class="controls">
+						<button class="next"><i class="fas fa-arrow-right"></i></button>
+						<div class="progress"></div>
+						<span class="number">
+							<span class="number-current"></span>
+							<span class="number-total"></span>
+						</span>
+						<span class="error-message"></span>
+					</div><!-- / controls -->
+				</div><!-- /simform-inner -->
+				<span class="final-message"></span>
+			</form><!-- /simform -->			
+		</section>
+	</div><!-- /container -->
+
+<!--MENU INFERIOR-->
+<div class="navbar secondary-background-color-app">
+  <a href="voucher.html" class="fa fa-home menu-icon"></a>
+  <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+  <a href="products.html" class="fa fa-shopping-cart menu-icon"></a>
+  <a href="service.html" class="fas fa-question menu-icon"></a>
+  <a href="profile.html" class="fas fa-user menu-icon"></a>
+</div>
+
+<!-- JS -->
+<script src="../scripts/form/classie.js"></script>
+<script src="../scripts/form/StepsForm.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../scripts/apis.js"></script>
+<script src="../scripts/environment.js"></script>
+<script>
+			var theForm = document.getElementById( 'theForm' );
+
+			new StepsForm( theForm, {
+				onSubmit : function( form ) {
+					
+					showLoading();
+
+					/*HOUSEHOLD*/
+					/*Cria Household e pega o PartyNumberKey*/
+					createHousehold($('#q1').val()).then(function(res){
+							console.log('createHousehold -> ', res);
+						//res.PartyNumberKey
+						//Pega o PrConId do membro dono do household
+						getMemberPoints().then(function(res2){
+							console.log('getMemberOwner -> ', res2);
+
+							//Adiciona o dono como relacionamento
+							updateHousehold(res.PartyNumberKey,res2.PrConId, res2.PrConId).then(function(res3){
+								console.log('updateOwner -> ', res3);
+
+								//Cria como membro no loyalty a pessoa que o dono quer adicionar
+								registerMember($('#q2').val().split(' ')[0], $('#q2').val().split(' ')[1], $('#q5').val(), $('#q4').val(), loyaltyProgram).then(function(res4){
+									console.log('createNewMember -> ', res4);
+
+									//Adiciona a pessoa que o dono quer adicionar como relacionamento
+									updateHousehold(res.PartyNumberKey,res2.PrConId, res4.PrConId).then(function(res5){
+										console.log('updateNewPerson -> ', res5);
+
+										createTransaction18C('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '0', 'Household').then(function(res6){
+												hideLoading();
+												// hide form
+												classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+												var messageEl = theForm.querySelector( '.final-message' );
+												messageEl.innerHTML = 'Obrigado! Seu grupo foi adicionado com sucesso!';
+												classie.addClass( messageEl, 'show' );
+										})
+									})
+
+
+								})
+
+
+
+							})
+
+						})
+
+					})
+
+				}
+			} );
+</script>
+</body>
+</html>

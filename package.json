@@ -1,0 +1,22 @@
+{
+  "name": "coalitionapp",
+  "version": "1.0.0",
+  "description": "Coalition App with Oracle Platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gianbiga/Loyalty-App.git"
+  },
+  "author": "Gianlucca Bigarelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gianbiga/Loyalty-App/issues"
+  },
+  "homepage": "https://github.com/gianbiga/Loyalty-App#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

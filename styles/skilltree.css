@@ -1,0 +1,615 @@
+/*****************/
+/*CATEGORY - FOOD*/
+/*****************/ 
+.icecream{ 
+background-image:url(
+    ../images/badges/icecream.png) !important; 
+}
+
+.sundae{
+background-image: url(
+    ../images/badges/sundae.png) !important;
+}
+
+.milkshake{
+background-image: url(
+    ../images/badges/milkshake.png) !important;
+}
+
+.frenchfries{
+background-image: url(
+    ../images/badges/frenchfries.png) !important;
+}
+
+.coke{
+background-image: url(
+    ../images/badges/coke.png) !important;
+}
+
+.hamburger{
+background-image: url(
+    ../images/badges/hamburger.png) !important;
+}
+
+.mcflurry{
+background-image: url(
+    ../images/badges/mcflurry.png) !important; 
+}
+
+.nuggets{
+background-image: url(
+    ../images/badges/nuggets.png) !important; 
+}
+
+.combo{
+background-image: url(
+    ../images/badges/combo.png) !important; 
+}
+
+.coffee{
+background-image: url(
+    ../images/badges/coffee.png) !important; 
+}
+
+.mcsalad{
+background-image: url(
+    ../images/badges/mcsalad.png) !important; 
+}
+
+
+/*****************/
+/*CATEGORY - PETS*/
+/*****************/ 
+.bath{
+background-image: url(
+    ../images/badges/bath.png) !important; 
+}
+
+.clothe{
+background-image: url(
+    ../images/badges/clothe.png) !important; 
+}
+
+.training{
+background-image: url(
+    ../images/badges/training.png) !important; 
+}
+
+.toy{
+background-image: url(
+    ../images/badges/toy.png) !important; 
+}
+
+.event{
+background-image: url(
+    ../images/badges/event.png) !important; 
+}
+
+.vaccine{
+background-image: url(
+    ../images/badges/vaccine.png) !important; 
+}
+
+.signature{
+background-image: url(
+    ../images/badges/signature.png) !important; 
+}
+
+.magazine{
+background-image: url(
+    ../images/badges/magazine.png) !important; 
+}
+
+.hotel2{
+background-image: url(
+    ../images/badges/hotel2.png) !important; 
+}
+
+.book2{
+background-image: url(
+    ../images/badges/book2.png) !important; 
+}
+
+.premiumfood{
+background-image: url(
+    ../images/badges/premiumfood.png) !important; 
+}
+
+.specialfood{
+background-image: url(
+    ../images/badges/specialfood.png) !important; 
+}
+
+.normalfood{
+background-image: url(
+    ../images/badges/normalfood.png) !important; 
+}
+
+.dogleash{
+background-image: url(
+    ../images/badges/dogleash.png) !important; 
+}
+
+.dogtag{
+background-image: url(
+    ../images/badges/dogtag.png) !important; 
+}
+
+.bone{
+background-image: url(
+    ../images/badges/bone.png) !important; 
+}
+
+.steak{
+background-image: url(
+    ../images/badges/steak.png) !important; 
+}
+
+.doghouse{
+background-image: url(
+    ../images/badges/doghouse.png) !important; 
+}
+
+/*****************/
+/*CATEGORY - BITS*/
+/*****************/ 
+
+.baby{
+background-image: url(
+    ../images/badges/baby.png) !important; 
+}
+
+.friend{
+background-image: url(
+    ../images/badges/friend.png) !important; 
+}
+
+.paodeacucar{
+background-image: url(
+    ../images/badges/paodeacucar.png) !important; 
+}
+
+.collaboration{
+background-image: url(
+    ../images/badges/collaboration.png) !important; 
+}
+
+.diferent{
+background-image: url(
+    ../images/badges/diferent.png) !important; 
+}
+
+.family{
+background-image: url(
+    ../images/badges/family.png) !important; 
+}
+
+.decoration{
+background-image: url(
+    ../images/badges/decoration.png) !important; 
+}
+
+.popular{
+background-image: url(
+    ../images/badges/popular.png) !important; 
+}
+
+.hiker{
+background-image: url(
+    ../images/badges/hiker.png) !important; 
+}
+
+.congrats{
+background-image: url(
+    ../images/badges/congrats.png) !important; 
+}
+
+.giver{
+background-image: url(
+    ../images/badges/giver.png) !important; 
+}
+
+.service{
+background-image: url(
+    ../images/badges/service.png) !important; 
+}
+
+.expert{
+background-image: url(
+    ../images/badges/expert.png) !important; 
+}
+
+
+
+
+
+/*******************/
+/*CATEGORY - COMMON*/
+/*******************/ 
+.secret{
+background-image: url(
+    ../images/badges/secret.png) !important; 
+}
+
+.check{
+background-image: url(
+    ../images/badges/check2.png) !important; 
+background: #4caf50;
+}
+
+
+
+
+
+/* PAGE */
+
+.skill_tree{
+    margin: 95px 0 0;
+    margin-top: -78px;
+    margin-bottom: 120px;
+}
+
+.icon_row{
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon_column{
+    color: #3c3c3c;
+    display: inline-block;
+    min-width: 60px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 20%;
+}
+
+.icon_column_profile {
+    color: #3c3c3c;
+    display: inline-block;
+    min-width: 59px;
+    margin-bottom: 24px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 13%;
+}
+
+.icon_adj{
+    background-position: center !important;
+    background-size: 45px !important;
+    background-repeat: no-repeat !important;
+}
+
+.icon_adj_profile{
+    /* filter: grayscale(100%); */
+    background-position: center !important;
+    background-size: 34px !important;
+    background-repeat: no-repeat !important;
+}
+
+.mission_adj{
+    border-radius: 98px;
+    display: inline-block;
+    height: 70px;
+    margin: 0 0 13px;
+    width: 70px;
+    box-shadow: 3px 3px 3px 3px #c8c8c8;
+}
+
+.mission_adj_profile{
+    border-radius: 98px;
+    display: inline-block;
+    height: 45px;
+    /* margin: 0 0 13px; */
+    width: 45px;
+    box-shadow: 2px 2px 2px 1px #c8c8c8;
+}
+
+.mission_text{
+    color: #b3b3b3;
+    display: block;
+    font-size: 17px;
+    width: 100px;
+    font-weight: 700;
+    left: -8px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 29px;
+    position: absolute;
+    word-wrap: break-word;
+    right: 0;
+    top: 52px;
+}
+
+/* COLORS */
+.color_blue{
+    background: #1caff6;
+}
+
+.color_green{
+    background: #7eb530;
+}
+
+.color_red{
+    background: #dd381d;
+}
+
+.color_yellow{
+    background: #f3c114;
+}
+
+.color_yellow2{
+    background: #f5ce2b;
+}
+
+
+.color_gray{
+    background: #cecece;
+}
+
+.color_disabled{
+    background: #cecece;
+    /* filter: grayscale(100%); */
+}
+
+.color_check {
+    background: #4caf50;
+}
+
+
+/* TIERS */
+
+.tier {
+    padding: 20px 0px;
+    margin-bottom: -30px;
+    margin-top: 10px;
+    width: 100%;
+    background: #ffc300;
+    font-size: 23px;
+    border-radius: 98px;
+    font-weight: 700;
+    box-shadow: 2px 2px 2px 2px #c8c8c8;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.tier:disabled{
+    background: #ddd;
+    color: #afafaf;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.points{
+    width: 19px;
+    height: 25px;
+    position: absolute;
+    top: 47%;
+    left: 60;
+}
+
+.points-val{
+    color: black;
+    font-weight: bold;
+    padding-left: 3px;
+    font-family: 'Lato';
+}
+
+.level-label{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lato';
+    font-size: 20px;
+    top: 20%;
+    left: 22px;
+}
+.mission_btn{
+    z-index: 1;
+    position: relative;
+}
+
+.level-val{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lato';
+    font-size: 25px;
+    top: 42%;
+    left: 20px;
+}
+
+
+#path-l{
+    animation-name: bright-l;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#path-r{
+    animation-name: bright-r;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+} 
+
+.thunder-svg {
+    position: fixed;
+    border-radius: 50%;
+    right: 11;
+    bottom: 109;
+    background: #30a6de;
+    width: 80px;
+    height: 80px;
+    -moz-box-shadow: 0 2px 5px 0px rgba(226, 87, 76, 0.3);
+    -webkit-box-shadow: 0 2px 5px 0px rgba(226, 87, 76, 0.3);
+    box-shadow: 1px 2px 0px 1px rgba(167, 163, 163, 0.3);
+    animation-name: size2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.thunder-title{
+    position: fixed;
+    border-radius: 50%;
+    right: 14;
+    bottom: 65;
+    color: #11719f;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lato';
+    animation-name: size3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+svg#Capa_1 {
+    max-height: 60px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    max-width: 60px;
+    animation-name: size;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.modal-header{
+
+}
+.modal-middle{
+
+}
+.modal-footer{
+
+height: auto;
+
+min-height: 5px;
+}
+
+.modal-voucher-header{
+
+}
+.modal-voucher-middle{
+
+text-align: center;
+}
+.modal-voucher-footer{
+
+height: auto;
+
+min-height: 5px;
+}
+
+
+@keyframes size{
+    0% {max-height: 58px;}
+    50% {max-height: 60px;}
+    100% {max-height: 58px;}
+}
+
+@keyframes size2{
+    0% {height: 78px;width: 78px;}
+    50% {height: 80px;width: 80px;}
+    100% {height: 78px;width: 78px;}
+}
+
+@keyframes size3{
+    0% {font-size: 20px;}
+    50% {font-size: 21px;}
+    100% {font-size: 20px;}
+}
+
+@keyframes bright-l{
+    0% {fill: #FFC850;}
+    50% {fill: #e4b449;}
+    100% {fill: #FFC850;}
+}
+
+@keyframes bright-r{
+    0% {fill: #FFDC64;}
+    50% {fill: #ffe383;}
+    100% {fill: #FFDC64;}
+}
+
+.tiers{
+    line-height: 0.5;
+    text-align: center;
+    margin-bottom: 26px;
+    margin-top: 115px;
+}
+
+.tiers span {
+  display: inline-block;
+  position: relative;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #5c5346;
+}
+
+.tiers span:before,
+.tiers span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 4px solid #5c534624;
+  top: 0;
+  width: 110px;
+}
+.tiers span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.tiers span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.sub-header{
+    
+position: fixed;
+    
+top: 74px;
+    
+z-index: 10;
+    
+font-weight: bold;
+    
+text-align: center;
+    
+left: 10px;
+    
+width: 98%;
+    
+background: #ffd833;
+    
+vertical-align: middle;
+    
+height: 32px;
+    
+padding-left: 3%;
+    
+margin-left: -10px;
+    
+padding-top: 2%;
+    
+/* font-weight: bold; */
+    
+font-family: 'Lato';
+}
+
+.color_background {
+    background: #00000078;
+    background-image: url(../images/badges/firstSteps.jpg) !important;
+    background-size: cover !important;
+    background-blend-mode: color;
+}
