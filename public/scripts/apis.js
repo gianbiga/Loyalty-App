@@ -2,9 +2,10 @@
 function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword, ReferredByNumber){
 
 	console.log(ReferredByNumber);
-	if(ReferredByNumber == ''){ReferredByNumber = null;}
-	console.log(ReferredByNumber);
-	
+	if(ReferredByNumber == ''){refNum = null;}
+	else{refNum = "\""+ReferredByNumber+"\""}
+	console.log(refNum);
+
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
@@ -14,7 +15,7 @@ function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNum
 			"content-type":"application/json"
 		},
 		"dataType":"json",
-		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\",\r\n   \"ReferredByNumber\": \""+ReferredByNumber+"\"\r\n}"
+		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\",\r\n   \"ReferredByNumber\": "+refNum+"\r\n}"
 	});
 }
 
