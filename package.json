@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/gianbiga/Loyalty-App#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "btoa": "^1.2.1",
+    "express": "^4.16.4",
+    "local-storage": "^1.4.2",
+    "nodemon": "^1.18.9"
   }
 }
