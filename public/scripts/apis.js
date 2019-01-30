@@ -1,8 +1,10 @@
 //Registro de Usuário
 function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword, ReferredByNumber){
 
+	console.log(ReferredByNumber);
 	if(ReferredByNumber == ''){ReferredByNumber = null;}
-
+	console.log(ReferredByNumber);
+	
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
