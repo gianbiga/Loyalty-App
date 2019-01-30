@@ -1,3 +1,9 @@
+
+function basicAuth(){
+	return window.btoa(username+":"+password);
+}
+
+
 //Registro de Usuário
 function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword, ReferredByNumber){
 
