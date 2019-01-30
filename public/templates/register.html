@@ -104,7 +104,7 @@ body {
 						.then(function(res){
 							localStorage.setItem('email',$('#email').val());	
 							localStorage.setItem('password',$('#password').val());	
-							localStorage.setItem('MemberID',res.MemberNumber);
+							localStorage.setItem('MemberID',res.loyaltyData.MemberNumber);
 							memberNumber = localStorage.getItem('MemberID');
 							localStorage.setItem('PushTransferPoints', '0');
 							localStorage.setItem('LevelPopUp', '0');
