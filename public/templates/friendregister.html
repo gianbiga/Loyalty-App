@@ -97,22 +97,20 @@ body {
 					
 					<div class="container-login100-form-btn p-t-25">
 						<button type="button" onclick="
-							showLoading(); 
-							registerFriendMember($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(), loyaltyProgram, getURLParameters('memberID')).then(function(res){
-								showLoading();
+							showLoading();
+							registerUser($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(),$('#password').val(), getURLParameters('memberID'))
+							.then(function(res){
 								console.log(getURLParameters('memberID'));
 									dumbTransaction(getURLParameters('memberID')).then(function(res2){
-
-										//Criar o usuário no OCC aqui. Você pode pegar o res.MemberNumber, que é o numero do membro do Loyalty que a promise retorna
+										
 										localStorage.setItem('MemberID',res.MemberNumber);
 										memberNumber = localStorage.getItem('MemberID');
-
 										getSpecificMember(res.ReferredByNumber).then(function(res3){
-										console.log(res.ReferredByNumber)
-										sendSMS(res3.EmailAddress.substring(1,res.EmailAddress.length),'Seu%20amigo%20acaba%20de%20se%20registar.%20Voce%20ganhou%205%20pontos');
-										localStorage.setItem('PushPrePaid', '0');
-										localStorage.setItem('LevelPopUp', '0');
-										setTimeout(function(){location.href='voucher.html';},3000)
+											console.log(res.ReferredByNumber)
+											sendSMS(res3.EmailAddress.substring(1,res.EmailAddress.length),'Seu%20amigo%20acaba%20de%20se%20registar.%20Voce%20ganhou%205%20pontos');
+											localStorage.setItem('PushPrePaid', '0');
+											localStorage.setItem('LevelPopUp', '0');
+											setTimeout(function(){location.href='voucher.html';},3000)
 										})
 
 									})

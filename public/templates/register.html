@@ -100,7 +100,7 @@ body {
 					</div>
 					
 					<div class="container-login100-form-btn p-t-25">
-						<button type="button" onclick="showLoading();registerUser($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(),$('#password').val())
+						<button type="button" onclick="showLoading();registerUser($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(),$('#password').val(), null)
 						.then(function(res){
 							localStorage.setItem('email',$('#email').val());	
 							localStorage.setItem('password',$('#password').val());	

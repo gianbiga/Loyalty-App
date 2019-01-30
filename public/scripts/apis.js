@@ -1,5 +1,5 @@
 //Registro de Usuário
-function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword){
+function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword, ReferredByNumber){
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
@@ -9,16 +9,9 @@ function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNum
 			"content-type":"application/json"
 		},
 		"dataType":"json",
-		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\"\r\n}"
+		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\",\r\n   \"ReferredByNumber\": \""+refByNumber+"\"\r\n}"
 	});
 }
-
-
-//AUTH - check
-function basicAuth(){
-	return window.btoa(username+":"+password);
-}
-
 
 function popupError(errorType){
 	document.getElementById('popupError').style.display='block';
@@ -26,22 +19,6 @@ function popupError(errorType){
 	$(".popup-error-desc").html(errorType);
 }
 
-//REGISTER MEMBER - check
-function registerMember(firstName, lastName, cellphone, email, loyaltyProgram){
-	return $.ajax({
-		"async": true,
-		"crossDomain": true,
-		"url": "https://"+environment+".oracledemos.com/salesApi/resources/latest/loyaltyMembers",
-		"method": "POST",
-		"headers": {
-			"authorization": "Basic "+basicAuth()+"",
-			"content-type": "application/vnd.oracle.adf.resourceitem+json"
-		},
-		"dataType"  : "json",
-		"data": "{\r\n \"ProgramName\": \""+loyaltyProgram+"\",\r\n   \"ContactFirstName\": \""+firstName+"\",\r\n   \"ContactLastName\": \""+lastName+"\",\r\n   \"WorkPhoneNumber\": \""+cellphone+"\",\r\n   \"EmailAddress\": \""+'0'+email+"\"\r\n}"
-
-	});
-}
 
 
 
@@ -494,6 +471,7 @@ function UpdateVoucherStatus(voucherID, voucherStatus){
 
 
 //REGISTER FRIEND MEMBER
+//check
 function registerFriendMember(firstName, lastName, cellphone, email, loyaltyProgram, refByNumber){
 	return $.ajax({
 		"async": true,

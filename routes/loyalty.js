@@ -46,6 +46,22 @@ module.exports = function (app) {
 
 	})
 
+	function registerFriendMember(firstName, lastName, cellphone, email, loyaltyProgram, refByNumber){
+	return $.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environment+".oracledemos.com/salesApi/resources/latest/loyaltyMembers",
+		"method": "POST",
+		"headers": {
+			"authorization": "Basic "+basicAuth()+"",
+			"content-type": "application/vnd.oracle.adf.resourceitem+json"
+		},
+		"dataType"  : "json",
+		"data": "{\r\n   \"ProgramName\": \""+loyaltyProgram+"\",\r\n   \"ContactFirstName\": \""+firstName+"\",\r\n   \"ContactLastName\": \""+lastName+"\",\r\n   \"WorkPhoneNumber\": \""+cellphone+"\",\r\n   \"EmailAddress\": \""+email+"\",\r\n   \"ReferredByNumber\": \""+refByNumber+"\"\r\n}"
+
+	})
+}
+
 
 	//Criação de um novo usuário
 	app.post('/registerMember',function(req, res){
@@ -69,17 +85,14 @@ module.exports = function (app) {
 				ContactFirstName : req.body.ContactFirstName,
 				ContactLastName: req.body.ContactLastName,
 				WorkPhoneNumber: req.body.WorkPhoneNumber,
-				EmailAddress: req.body.EmailAddress
+				EmailAddress: req.body.EmailAddress,
+				ReferredByNumber: req.body.ReferredByNumber
 			})
 			.then(function(response2){
-
-				console.log(response2);
-
 				res.json({
 					commerceData : response1.data,
 					loyaltyData : response2.data
 				});
-				/*res.redirect('/templates/voucher.html');*/
 			})
 			.catch(function(err){
 				console.log(err);
