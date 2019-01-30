@@ -50,18 +50,6 @@ module.exports = function (app) {
 	//Criação de um novo usuário
 	app.post('/registerMember',function(req, res){
 
-		ls.remove('MemberID');
-
-		//Cria usuário no Loyalty
-		loyaltyInstance.post('/loyaltyMembers/',{
-			ProgramName : loyalty.loyaltyProgram,
-			ContactFirstName : req.body.ContactFirstName,
-			ContactLastName: req.body.ContactLastName,
-			WorkPhoneNumber: req.body.WorkPhoneNumber,
-			EmailAddress: req.body.EmailAddress
-		})
-		.then(function(response1){
-
 			//Cria usuário no OCC
 			commerceInstance.post('/ccstoreui/v1/profiles',{
 				email : req.body.EmailAddress,
@@ -73,18 +61,24 @@ module.exports = function (app) {
 				locale : "en",
 				loyaltyMemberNumber : loyalty.memberNumber
 			})
+		.then(function(response1){
+
+			//Cria usuário no Loyalty
+			loyaltyInstance.post('/loyaltyMembers/',{
+				ProgramName : loyalty.loyaltyProgram,
+				ContactFirstName : req.body.ContactFirstName,
+				ContactLastName: req.body.ContactLastName,
+				WorkPhoneNumber: req.body.WorkPhoneNumber,
+				EmailAddress: req.body.EmailAddress
+			})
 			.then(function(response2){
 
-				console.log(response1.data.MemberNumber);
+				console.log(response2);
 
-				ls.set('email',req.body.EmailAddress);	
-				ls.set('password',req.body.ContactPassword);	
-				ls.set('MemberID',response1.data.MemberNumber);
-				loyalty.memberNumber = ls.get('MemberID');
-				ls.set('PushTransferPoints', '0');
-				ls.set('LevelPopUp', '0');
-				console.log(ls.get('MemberID'));
-				res.send(ls.get('password'));
+				res.json({
+					commerceData : response1.data,
+					loyaltyData : response2.data
+				});
 				/*res.redirect('/templates/voucher.html');*/
 			})
 			.catch(function(err){

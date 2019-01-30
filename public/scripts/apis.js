@@ -1,6 +1,16 @@
 //Registro de Usuário
-function registerUser(){
-	
+function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNumber,ContactPassword){
+	return $.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url":"https://coalitionappgb.herokuapp.com/registerMember",
+		"method":"POST",
+		"headers":{
+			"content-type":"application/json"
+		},
+		"dataType":"json",
+		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\"\r\n}"
+	});
 }
 
 

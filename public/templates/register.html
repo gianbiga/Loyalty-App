@@ -58,7 +58,7 @@ body {
   	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form class="login100-form validate-form" action="/registerMember" method="post">
+				<form class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-b-16"">
 						<input id="firstname" class="input100" type="text" name="ContactFirstName" placeholder="First Name">
 						<span class="focus-input100"></span>
@@ -100,7 +100,20 @@ body {
 					</div>
 					
 					<div class="container-login100-form-btn p-t-25">
-						<button type="button" onclick="registerUser()" class="login100-form-btn">Register</button>
+						<button type="button" onclick="showLoading();registerUser($('#firstname').val(), $('#lastname').val(), $('#email').val(), $('#cellphone').val(),$('#password').val())
+						.then(function(res){
+							localStorage.setItem('email',$('#email').val());	
+							localStorage.setItem('password',$('#password').val());	
+							localStorage.setItem('MemberID',res.MemberNumber);
+							memberNumber = localStorage.getItem('MemberID');
+							localStorage.setItem('PushTransferPoints', '0');
+							localStorage.setItem('LevelPopUp', '0');
+							location.href='voucher.html';
+						})
+						.catch(function(error){
+							console.log(error);
+						})
+							" class="login100-form-btn">Register</button>
 					</div>
 
 				</form>
