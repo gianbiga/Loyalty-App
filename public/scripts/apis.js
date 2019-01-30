@@ -9,7 +9,7 @@ function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNum
 			"content-type":"application/json"
 		},
 		"dataType":"json",
-		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\",\r\n   \"ReferredByNumber\": \""+refByNumber+"\"\r\n}"
+		"data": "{\r\n\"ContactFirstName\": \""+ContactFirstName+"\",\r\n\"ContactLastName\": \""+ContactLastName+"\",\r\n\"EmailAddress\": \""+EmailAddress+"\",\r\n\"WorkPhoneNumber\": \""+WorkPhoneNumber+"\",\r\n\"ContactPassword\":\""+ContactPassword+"\",\r\n   \"ReferredByNumber\": \""+ReferredByNumber+"\"\r\n}"
 	});
 }
 
