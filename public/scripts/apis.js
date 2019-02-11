@@ -31,6 +31,41 @@ function popupError(errorType){
 	$(".popup-error-desc").html(errorType);
 }
 
+/*GET MEMBER INFORMATION*/
+//checking
+function getMember(){
+	return 	$.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://coalitionappgb.herokuapp.com/getMember",
+		"method": "GET",
+		"headers": {
+			"authorization": "Basic "+basicAuth()+""
+		}
+
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -240,6 +275,7 @@ households/647302/child/Relationship
 
 
 /*GET MEMBER INFORMATION*/
+//checking
 function getMemberPoints(info){
 	var settings = {
 		"async": true,

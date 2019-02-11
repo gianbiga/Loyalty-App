@@ -31,38 +31,6 @@ module.exports = function (app) {
 		dataType  : "json"
 	})
 
-	//Get Loyalty Member
-	app.get('/getMember',function(req, res){
-
-		loyaltyInstance.get('/loyaltyMembers/'+loyalty.memberNumber,{
-		})
-		.then(function(response){
-			console.log(response.data);
-			res.send(response.data);
-		})
-		.catch(function(err){
-			console.log(err);
-		})
-
-	})
-
-	function registerFriendMember(firstName, lastName, cellphone, email, loyaltyProgram, refByNumber){
-	return $.ajax({
-		"async": true,
-		"crossDomain": true,
-		"url": "https://"+environment+".oracledemos.com/salesApi/resources/latest/loyaltyMembers",
-		"method": "POST",
-		"headers": {
-			"authorization": "Basic "+basicAuth()+"",
-			"content-type": "application/vnd.oracle.adf.resourceitem+json"
-		},
-		"dataType"  : "json",
-		"data": "{\r\n   \"ProgramName\": \""+loyaltyProgram+"\",\r\n   \"ContactFirstName\": \""+firstName+"\",\r\n   \"ContactLastName\": \""+lastName+"\",\r\n   \"WorkPhoneNumber\": \""+cellphone+"\",\r\n   \"EmailAddress\": \""+email+"\",\r\n   \"ReferredByNumber\": \""+refByNumber+"\"\r\n}"
-
-	})
-}
-
-
 	//Criação de um novo usuário
 	app.post('/registerMember',function(req, res){
 
@@ -105,6 +73,81 @@ module.exports = function (app) {
 			res.redirect('/templates/register.html');
 		})
 	})
+
+	//Get Loyalty Member
+	app.get('/getMember',function(req, res){
+
+		loyaltyInstance.get('/loyaltyMembers/'+"300000176114014",{
+		})
+		.then(function(response){
+			console.log(response.data);
+			res.send(response.data);
+		})
+		.catch(function(err){
+			console.log(err);
+		})
+
+	})
+
+
+/*GET MEMBER INFORMATION*/
+function getMemberPoints(info){
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environment+".oracledemos.com/crmRestApi/resources/latest/loyaltyMembers/"+memberNumber+"",
+		"method": "GET",
+		"headers": {
+			"authorization": "Basic "+basicAuth()+""
+		}
+	}
+
+	switch(info){
+		case "tier":
+		$.ajax(settings).done(function (response) {
+/*				document.getElementsByClassName("level-val")[0].innerHTML = response.TierName;
+				
+				//O Ambiente ecor está com problema na API
+				if(response.TierName == null){
+  					document.getElementsByClassName("level-val")[0].innerHTML = "Intermediate";
+  				}*/
+  			})
+		break;
+		case "balance":
+		$.ajax(settings).done(function (response) {
+			document.getElementsByClassName("points-val")[0].innerHTML = response.PointTypeAAvlVal;
+
+
+		})
+		break;
+		case "NBO":
+		$.ajax(settings).done(function (response) {
+			/*$(".NBO").addClass("hide");*/
+			//console.log(eval("response."+NBO));
+			if(eval("response."+NBO) == 1){$("#cardNBO1").removeClass("hide")}
+				if(eval("response."+NBO) == 6){$("#cardNBO6").removeClass("hide")}
+					if(eval("response."+NBO) == 7){$("#cardNBO7").removeClass("hide")}
+						if(eval("response."+NBO) == 2){$("#creditcardNBO").removeClass("hide")}
+							if(eval("response."+NBO) == 4){$("#lojaNBO").removeClass("hide")}
+								if(eval("response."+NBO) == 5){$("#surveyNBO").removeClass("hide")}
+						//console.log(response);
+				})
+		break;
+		case "ThirdVoucher17D":
+		$.ajax(settings).done(function (response) {
+			if(response.PointTypeFVal == 1){
+				document.getElementById("Mc BigTasty").classList.remove("color_disabled");
+				document.getElementById("Mc BigTasty").classList.remove("secret");
+			}
+		})
+		break;
+		default:
+		return $.ajax(settings);
+		break;
+	}
+}
+
+
 
 	//Create Transaction
 	app.post('/createTransaction',function(req, res){
