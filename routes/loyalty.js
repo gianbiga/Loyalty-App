@@ -79,7 +79,7 @@ module.exports = function (app) {
 	//Get Loyalty Member
 	app.get('/getMember',function(req, res){
 
-		loyaltyInstance.get('/loyaltyMembers/'+"300000176114014",{
+		loyaltyInstance.get('/loyaltyMembers/'+ loyalty.memberNumber,{
 		})
 		.then(function(response){
 			console.log(response.data);
