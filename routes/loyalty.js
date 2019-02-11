@@ -6,10 +6,12 @@ module.exports = function (app) {
 	var env = require('../config/environment.js');
 	var bodyParser = require('body-parser');
 	var ls = require('local-storage');
+	var cors = require('cors');
 
 	//O body parser é necessário para fazer os POSTs
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
+	app.use(cors());
 
 	//Create Base Path for Loyalty Calls
 	var loyaltyInstance = axios.create({
