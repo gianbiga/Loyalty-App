@@ -79,78 +79,33 @@ module.exports = function (app) {
 	//Get Loyalty Member
 	app.get('/getMember/:memberNumber',function(req, res){
 
-		console.log("MEMBRO -> ",req.params.memberNumber);
-
-		loyaltyInstance.get('/loyaltyMembers/'+ req.params.memberNumber,{
+		loyaltyInstance.get('/loyMembers/'+ req.params.memberNumber,{
 		})
 		.then(function(response){
 			console.log(response.data);
 			res.send(response.data);
 		})
 		.catch(function(err){
-			/*console.log(err);*/
+			console.log(err);
 		})
 
 	})
 
 
-/*GET MEMBER INFORMATION*/
-function getMemberPoints(info){
-	var settings = {
-		"async": true,
-		"crossDomain": true,
-		"url": "https://"+environment+".oracledemos.com/crmRestApi/resources/latest/loyaltyMembers/"+memberNumber+"",
-		"method": "GET",
-		"headers": {
-			"authorization": "Basic "+basicAuth()+""
-		}
-	}
+	//Get Loyalty Member Balance
+	app.get('/getMemberBalance/:memberNumber',function(req, res){
 
-	switch(info){
-		case "tier":
-		$.ajax(settings).done(function (response) {
-/*				document.getElementsByClassName("level-val")[0].innerHTML = response.TierName;
-				
-				//O Ambiente ecor está com problema na API
-				if(response.TierName == null){
-  					document.getElementsByClassName("level-val")[0].innerHTML = "Intermediate";
-  				}*/
-  			})
-		break;
-		case "balance":
-		$.ajax(settings).done(function (response) {
-			document.getElementsByClassName("points-val")[0].innerHTML = response.PointTypeAAvlVal;
-
-
+		loyaltyInstance.get('/loyMembers/'+ req.params.memberNumber +'/'+'/child/pointbalances',{
 		})
-		break;
-		case "NBO":
-		$.ajax(settings).done(function (response) {
-			/*$(".NBO").addClass("hide");*/
-			//console.log(eval("response."+NBO));
-			if(eval("response."+NBO) == 1){$("#cardNBO1").removeClass("hide")}
-				if(eval("response."+NBO) == 6){$("#cardNBO6").removeClass("hide")}
-					if(eval("response."+NBO) == 7){$("#cardNBO7").removeClass("hide")}
-						if(eval("response."+NBO) == 2){$("#creditcardNBO").removeClass("hide")}
-							if(eval("response."+NBO) == 4){$("#lojaNBO").removeClass("hide")}
-								if(eval("response."+NBO) == 5){$("#surveyNBO").removeClass("hide")}
-						//console.log(response);
-				})
-		break;
-		case "ThirdVoucher17D":
-		$.ajax(settings).done(function (response) {
-			if(response.PointTypeFVal == 1){
-				document.getElementById("Mc BigTasty").classList.remove("color_disabled");
-				document.getElementById("Mc BigTasty").classList.remove("secret");
-			}
+		.then(function(response){
+			console.log(response.data);
+			res.send(response.data);
 		})
-		break;
-		default:
-		return $.ajax(settings);
-		break;
-	}
-}
+		.catch(function(err){
+			console.log(err);
+		})
 
+	})
 
 
 	//Create Transaction

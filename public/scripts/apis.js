@@ -2,11 +2,9 @@ var memberNumber = localStorage.getItem('MemberID');
 var environmentName = "coalitionappgb.herokuapp.com";
 
 
-
 function basicAuth(){
 	return window.btoa(username+":"+password);
 }
-
 
 
 
@@ -38,7 +36,6 @@ function popupError(errorType){
 }
 
 /*GET MEMBER INFORMATION*/
-//checking
 function getMember(){
 	return 	$.ajax({
 		"async": true,
@@ -52,9 +49,19 @@ function getMember(){
 	})
 }
 
+/*GET MEMBER BALANCE*/
+function getMemberBalance(){
+	return 	$.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environmentName+"/getMemberBalance/"+memberNumber,
+		"method": "GET",
+		"headers": {
+			"authorization": "Basic "+basicAuth()+""
+		}
 
-
-
+	})
+}
 
 
 

@@ -302,9 +302,19 @@
 </script>
 
 <script type="text/javascript">
-  getMemberPoints("NBO");
 
-  getMemberPoints18C().then(function(res){
+  getMember().then(function(response){
+
+    console.log('NBO ->', eval("response."+NBO));
+    if(eval("response."+NBO) == 1){$("#cardNBO1").removeClass("hide")}
+      if(eval("response."+NBO) == 6){$("#cardNBO6").removeClass("hide")}
+        if(eval("response."+NBO) == 7){$("#cardNBO7").removeClass("hide")}
+          if(eval("response."+NBO) == 2){$("#creditcardNBO").removeClass("hide")}
+            if(eval("response."+NBO) == 4){$("#lojaNBO").removeClass("hide")}
+              if(eval("response."+NBO) == 5){$("#surveyNBO").removeClass("hide")}
+  })
+ 
+  getMember().then(function(res){
     document.getElementsByClassName("profile-points")[0].innerHTML = res.PointTypeAVal;
     document.getElementsByClassName("profile-level")[0].innerHTML = res.TierName;
     console.log('18C - > ', res);
@@ -312,7 +322,8 @@
   });
 
   /*get Progress*/
-  getSpecificMemberBalance('300000176079874').then(function(res){
+  getMemberBalance().then(function(res){
+    console.log(res);
         setProgress(100*parseInt(res.items[0].Qualifyingbalance)/40);
   });
 
