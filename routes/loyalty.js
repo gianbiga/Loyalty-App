@@ -77,16 +77,18 @@ module.exports = function (app) {
 	})
 
 	//Get Loyalty Member
-	app.get('/getMember',function(req, res){
+	app.get('/getMember/:memberNumber',function(req, res){
 
-		loyaltyInstance.get('/loyaltyMembers/'+ loyalty.memberNumber,{
+		console.log("MEMBRO -> ",req.params.memberNumber);
+
+		loyaltyInstance.get('/loyaltyMembers/'+ req.params.memberNumber,{
 		})
 		.then(function(response){
 			console.log(response.data);
 			res.send(response.data);
 		})
 		.catch(function(err){
-			console.log(err);
+			/*console.log(err);*/
 		})
 
 	})

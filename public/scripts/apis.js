@@ -1,7 +1,13 @@
+var memberNumber = localStorage.getItem('MemberID');
+var environmentName = "coalitionappgb.herokuapp.com";
+
+
 
 function basicAuth(){
 	return window.btoa(username+":"+password);
 }
+
+
 
 
 //Registro de Usuário
@@ -15,7 +21,7 @@ function registerUser(ContactFirstName,ContactLastName,EmailAddress,WorkPhoneNum
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url":"https://coalitionappgb.herokuapp.com/registerMember",
+		"url":"https://"+environmentName+"/registerMember",
 		"method":"POST",
 		"headers":{
 			"content-type":"application/json"
@@ -37,7 +43,7 @@ function getMember(){
 	return 	$.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url": "https://coalitionappgb.herokuapp.com/getMember",
+		"url": "https://"+environmentName+"/getMember/"+memberNumber,
 		"method": "GET",
 		"headers": {
 			"authorization": "Basic "+basicAuth()+""
