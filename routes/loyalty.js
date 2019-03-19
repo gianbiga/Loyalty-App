@@ -107,7 +107,6 @@ module.exports = function (app) {
 
 	})
 
-
 	//Create Transaction
 	app.post('/createTransaction',function(req, res){
 		loyaltyInstance.post('/loyTransactions/',{
@@ -142,6 +141,12 @@ module.exports = function (app) {
 			res.send(err);
 		})
 	})
+
+
+
+
+
+
 
     module.exports = app;
 };

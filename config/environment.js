@@ -6,7 +6,7 @@ var btoa = require('btoa');
 loyalty = {
 	environment : "adc4-zevg-fa-ext",
 	username : "john.dunbar",
-	password : "pjv76689",
+	password : "gAP39645",
 	loyaltyProgram : "Programa de Fidelidade",
 	pointType : "Pontos"
 };

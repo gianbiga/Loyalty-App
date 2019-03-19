@@ -43,7 +43,7 @@ function getMember(){
 		"url": "https://"+environmentName+"/getMember/"+memberNumber,
 		"method": "GET",
 		"headers": {
-			"authorization": "Basic "+basicAuth()+""
+			"content-type":"application/json"
 		}
 
 	})
@@ -57,13 +57,11 @@ function getMemberBalance(){
 		"url": "https://"+environmentName+"/getMemberBalance/"+memberNumber,
 		"method": "GET",
 		"headers": {
-			"authorization": "Basic "+basicAuth()+""
+			"content-type":"application/json"
 		}
 
 	})
 }
-
-
 
 
 
@@ -415,73 +413,6 @@ function getSpecificVoucher(voucherNumber){
 	});
 }
 
-/*UPDATE SKILL TREE SCREEN WITH VOUCHERS INFO*/
-function getMemberVouchers(){	
-	$(document).ready(function(){
-		var vouchers = {
-			"async": true,
-			"crossDomain": true,
-			"url": "https://"+environment+".oracledemos.com/crmRestApi/resources/latest/loyaltyMembers/"+memberNumber+"/child/MemberVouchers",
-			"method": "GET",
-			"headers": {
-				"authorization": "Basic "+basicAuth()+""
-			}
-		}
-
-		$.ajax(vouchers).done(function (response) {
-			var voucherList = new Array(response.items.length); 
-			var voucherStatus = new Array(response.items.length); 
-			var voucherID = new Array(response.items.length);
-			var produtos = document.getElementsByClassName("mission_adj");
-			var produtosProfile = document.getElementsByClassName("mission_adj_profile");
-			//console.log(response);
-
-			for(i=0;i<response.items.length;i++){
-
-				counter = 0;
-				voucherList[i] = response.items[i].VoucherType;
-				voucherStatus[i] = response.items[i].voucherStatus;
-				voucherID[i] = response.items[i].LoyMemVchrId;
-
-
-				//console.log("voucherList ->", voucherList);
-				//console.log("voucherStatus ->", voucherStatus);
-				//console.log("voucherID ->", voucherID);
-				//console.log("produtos ->", produtos);
-
-				for(j=0;j<produtos.length;j++){
-					if(produtos[j].id == voucherList[i]){
-						document.getElementById(produtos[j].id).classList.remove("color_disabled");
-						document.getElementById(produtos[j].id).classList.remove("secret");
-						produtos[j].parentElement.getElementsByClassName("mission_text")[0].classList.remove("hide");
-						produtos[j].parentElement.getElementsByClassName("mission_text")[0].style.color = "#5C5346";
-
-
-						//Checks GREEN the whole line of the trail
-						if(voucherStatus[i] == "Usado"){
-							parentRow = document.getElementById(voucherList[i]).parentElement.parentElement;
-							for (k=0; k<parentRow.getElementsByClassName("mission_adj").length; k++){
-								parentRow.getElementsByClassName("mission_adj")[k].classList.add("check");
-								parentRow.getElementsByClassName("mission_adj")[k].classList.add("color_check");
-							}
-						}
-					}	
-				}
-
-				/*Badges no Profile*/
-				for(p=0;p<produtosProfile.length;p++){
-					if(produtosProfile[j].id == voucherList[i]){
-						if(counter <= 3){
-							produtosProfile[p].parentElement.classList.remove("hide");
-							counter=counter+1;
-						}	
-
-					}
-				}
-			}
-		});
-	});
-}
 
 /*GET MEMBER INFORMATION 18C*/
 function getMemberPoints18C(){
