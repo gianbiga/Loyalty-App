@@ -107,16 +107,20 @@ module.exports = function (app) {
 
 	})
 
+
+
 	//Create Transaction
 	app.post('/createTransaction',function(req, res){
 		loyaltyInstance.post('/loyTransactions/',{
-			MemberNumber : loyalty.memberNumber,
+			MemberNumber : req.body.memberNumber,
 			ProgramName : loyalty.loyaltyProgram,
 			PointTypeName : loyalty.pointType,
 			TypeCode : req.body.TypeCode,
 			SubTypeCode : req.body.SubTypeCode,
 			AmountValue : req.body.AmountValue,
-			Comments : req.body.Comments
+			Comments : req.body.Comments,
+			Points:req.body.Points,
+			ProductNumber: req.body.ProductNumber
 		})
 		.then(function(response){
 			console.log('Certo -->', response.data);

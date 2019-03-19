@@ -248,54 +248,54 @@
 <script type="text/javascript" src="../scripts/apis.js"></script>
 <script type="text/javascript" src="../scripts/register.js"></script>
 
-<!-- Coloca os IDs definidos no environment.js afim de otimizar a demo-->
-<script type="text/javascript">
-inputID("mission_adj");
-</script>
 
-<!-- Pega Medalhas do Membro -->
+
+
 <script type="text/javascript">
-$.each($(".mission_adj"), function(index, value){
-  getMemberPoints().then(function(res){
-    if(eval("res."+value.id) == 1){
-      value.classList.remove("color_disabled");
-      value.style.color = "#5C5346";
+
+  /*ATUALIZA AS MEDALHAS*/
+  //Insere os IDs das medalhas do arquivo environment.js no HTML
+  inputID("mission_adj");
+
+  //Varre o HTML e esconde ou brilha as medalhas corretas
+  $.each($(".mission_adj"), function(index, value){
+    getMember().then(function(res){
+      if(eval("res."+value.id) == 1){
+        value.classList.remove("color_disabled");
+        value.style.color = "#5C5346";
+      }
+    })
+  })
+
+  /*PASSOU DE NÍVEL*/
+  getMember().then(function(res){
+    if(res.TierName == "Prata"){
+      if(localStorage.getItem('LevelPopUp') != '1'){
+        document.getElementById('informationPopup').style.display='block';
+      }
+      $('.paodeacucar').parents().parents()[0].classList.remove('hide')
+    }
+    if(res.TierName == "Lover"){
+      $("#tier2").attr("disabled", false);
+      $("#tier3").attr("disabled", false);
+      if(localStorage.getItem('LevelPopUp') != '1'){document.getElementById('informationPopup').style.display='block';}
     }
   })
-})
 
+  /*DESCONTOS SECRETOS*/
+  $.each($(".mission_adj"), function(index,value){
+      if(jQuery.inArray("secret", value.classList)>0){
+    jQuery(value).parent().children()[1].classList.add("hide");
+      }
+      if(jQuery.inArray("color_disabled", value.classList)==-1){
+        console.log("rtes")
+    jQuery(value).parent().children()[1].style.color = "#5C5346";
+      }
+  })
+
+  $(".infoLevel").click(function(){localStorage.setItem('LevelPopUp', '1')});
 </script>
 
-<script type="text/javascript">
-/*Passou de Nivel*/
-getMemberPoints18C().then(function(res){
-  if(res.TierName == "Prata"){
-    if(localStorage.getItem('LevelPopUp') != '1'){
-      document.getElementById('informationPopup').style.display='block';
-    }
-    $('.paodeacucar').parents().parents()[0].classList.remove('hide')
-  }
-  if(res.TierName == "Lover"){
-    $("#tier2").attr("disabled", false);
-    $("#tier3").attr("disabled", false);
-    if(localStorage.getItem('LevelPopUp') != '1'){document.getElementById('informationPopup').style.display='block';}
-  }
-})
-
-
-/*Descontos Secretos*/
-$.each($(".mission_adj"), function(index,value){
-    if(jQuery.inArray("secret", value.classList)>0){
-  jQuery(value).parent().children()[1].classList.add("hide");
-    }
-    if(jQuery.inArray("color_disabled", value.classList)==-1){
-      console.log("rtes")
-  jQuery(value).parent().children()[1].style.color = "#5C5346";
-    }
-})
-
-$(".infoLevel").click(function(){localStorage.setItem('LevelPopUp', '1')});
-</script>
 
 </body>
 </html>

@@ -64,10 +64,52 @@ function getMemberBalance(){
 }
 
 
+/*REDEEM POINTS - doing*/
+function redeemMemberPoints(memberNum, product, amount, pointsRedeem){
+	return 	$.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environmentName+"/createTransaction/",
+		"method": "GET",
+		"headers": {
+			"content-type":"application/json"
+		},
+		"dataType":"json",
+		"data": "{\r\n\"MemberNumber\": \""+memberNum+"\",\r\n\"TypeCode\": \"ORA_TXN_RED\",\r\n\"SubTypeCode\": \"ORA_RED_PROD\",\r\n\"ProductNumber\": \""+product+"\",\r\n \"AmountValue\": "+amount+",\r\n\"Points\": \""+pointsRedeem+"\",\r\n  \"Comments\": \""+null+"\"\r\n}"
+
+	})
+}
+
+/*MemberNumber
+ProgramName
+
+TypeCode
+SubTypeCode
+
+ProductNumber
+AmountValue
+
+Points
+
+Comments*/
 
 
-
-
+/*REDEEM POINTS - doing*/
+/*Example: redeemPoints("300000176076197", "Bitz", "Crédito de R$100,00 em compras na Etna", "100", "1")*/
+function redeemPoints(memberNum, pointType, product, amount, pointsRedeem){
+	return $.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environment+".oracledemos.com/crmRestApi/resources/latest/loyTransactions",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/vnd.oracle.adf.resourceitem+json",
+			"Content-Language": "en",
+			"Authorization": "Basic "+basicAuth()+""
+		},
+		"data": "{\r\n\"MemberNumber\": \""+memberNum+"\",\r\n\"ProgramName\": \""+loyaltyProgram+"\",\r\n\"TypeCode\": \"ORA_TXN_RED\",\r\n\"SubTypeCode\": \"ORA_RED_PROD\",\r\n\"PointTypeName\": \""+pointType+"\",\r\n\"ProductNumber\": \""+product+"\",\r\n \"AmountValue\": "+amount+",\r\n\"Points\": \""+pointsRedeem+"\"\r\n}"
+	})
+}
 
 
 
@@ -145,7 +187,7 @@ function getTransaction(memberNum){
 
 
 
-/*REDEEM POINTS*/
+/*REDEEM POINTS - doing*/
 /*Example: redeemPoints("300000176076197", "Bitz", "Crédito de R$100,00 em compras na Etna", "100", "1")*/
 function redeemPoints(memberNum, pointType, product, amount, pointsRedeem){
 	return $.ajax({
