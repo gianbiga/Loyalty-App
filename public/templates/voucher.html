@@ -342,7 +342,7 @@
   /*Level Progress Bar*/
   getMemberBalance().then(function(res){
     console.log(res);
-    setProgress(100*parseInt(res.items[1].Qualifyingbalance)/40);
+    setProgress(100*parseInt(res.items[0].Qualifyingbalance)/40);
   });
 
 
