@@ -160,7 +160,7 @@ body {
 									updateHousehold(res.PartyNumberKey,res2.PrConId, res4.PrConId).then(function(res5){
 										console.log('updateNewPerson -> ', res5);
 
-										createTransaction18C('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '0', 'Household').then(function(res6){
+										redeemPoints(memberNumber, pointType, 'Household', 0, 0).then(function(res6){
 												hideLoading();
 												// hide form
 												classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );

@@ -436,7 +436,7 @@
                 $(".controls").addClass('hide');
                 $("#title").addClass('hide');
                 $(".survey-end").removeClass('hide');
-                createTransaction18C('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '0', 'Pesquisa').then(function(res){
+                redeemPoints(memberNumber, pointType, 'Pesquisa', 0, 0).then(function(res){
                   console.log(res)
                 });
                 //instance.restart();

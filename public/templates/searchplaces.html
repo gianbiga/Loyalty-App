@@ -214,7 +214,7 @@
           <h3 class="location-status">Open Now</h3>
           <h3 class="location-select" onclick="
           showLoading();
-          createTransaction18C('ORA_TXN_ACC', 'ORA_ACC_MCR', memberNumber, pointType, '0', 'Visita').then(function(res){
+          redeemPoints(memberNumber, pointType, 'Visita', 0, 0).then(function(res){
           location.href='voucher.html';
           })
 

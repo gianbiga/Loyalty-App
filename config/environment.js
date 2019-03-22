@@ -4,9 +4,9 @@ var btoa = require('btoa');
 /*ls.set("MemberID", "300000176112379");*/
 
 loyalty = {
-	environment : "adc4-zevg-fa-ext",
+	environment : "adc4-zbia-fa-ext",
 	username : "john.dunbar",
-	password : "gAP39645",
+	password : "sZt57945",
 	loyaltyProgram : "Programa de Fidelidade",
 	pointType : "Pontos"
 };

@@ -382,11 +382,11 @@ function setProgress(percent) {
 <!-- Coloca as imagens do OCC no Banner-->
 
 <!-- Anti-CORS -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   $.each($(".banner-img"), function(index,value){
     value.src = getBannerJSON.category.categoryImages[index].url;
   })
-</script> -->
+</script>
 
 
 <!-- Banner do OCC -->
@@ -397,13 +397,13 @@ function setProgress(percent) {
   })
 })*/
 
-getOCCProductsFromCollection('destaques').then(function(res){
- $.each($('.banner-img'), function(index,value){
-  /*value.src = res.category.categoryImages[index].url;*/
-  console.log(res.category.categoryImages[index].url)
-  value.src = res.category.categoryImages[index].url;
-})
-})
+/*getOCCProductsFromCollection('destaques').then(function(res){
+   $.each($('.banner-img'), function(index,value){
+    console.log(res.category.categoryImages[index].url)
+    value.src = res.category.categoryImages[index].url;
+  })
+})*/
+
 </script>
 
 </body>
