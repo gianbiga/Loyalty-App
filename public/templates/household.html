@@ -157,7 +157,7 @@ body {
 									console.log('createNewMember -> ', res4);
 
 									//Adiciona a pessoa que o dono quer adicionar como relacionamento
-									updateHousehold(res.PartyNumberKey,res2.PrConId, res4.PrConId).then(function(res5){
+									updateHousehold(res.PartyNumberKey,res2.PrConId, res4.loyaltyData.PrConId).then(function(res5){
 										console.log('updateNewPerson -> ', res5);
 
 										redeemPoints(memberNumber, pointType, 'Household', 0, 0).then(function(res6){
