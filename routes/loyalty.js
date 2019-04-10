@@ -26,7 +26,7 @@ module.exports = function (app) {
 
 	//Create Base Path for Commerce Cloud Calls
 	var commerceInstance = axios.create({
-		baseURL: "https://"+commerce.environment+".oracleoutsourcing.com",
+		baseURL: "https://"+commerce.environment+".oracledemos.com",
 		headers: {
 			'Content-Type': "application/json"
 		},

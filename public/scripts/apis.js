@@ -600,7 +600,7 @@ function getOCCProductsFromCollection(collectionName){
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url": "https://"+OCCenvironment+".oracleoutsourcing.com/ccstoreui/v1/products?categoryId="+collectionName,
+		"url": "https://"+OCCenvironment+".oracledemos.com/ccstoreui/v1/products?categoryId="+collectionName,
 		"method": "GET",
 		"headers": {
 		}
@@ -612,7 +612,7 @@ function getOCCSpecificProductFromCollection(collectionName, id){
 	return $.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url": "https://"+OCCenvironment+".oracleoutsourcing.com/ccstoreui/v1/products?categoryId="+collectionName+"&q=id%20co%20%22"+id+"%22",
+		"url": "https://"+OCCenvironment+".oracledemos.com/ccstoreui/v1/products?categoryId="+collectionName+"&q=id%20co%20%22"+id+"%22",
 		"method": "GET",
 		"headers": {
 		}
@@ -624,7 +624,7 @@ function registerOCC(firstName, lastName, password, email, loyaltyProgram){
 	$.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url": "https://"+OCCenvironment+".oracleoutsourcing.com/ccstoreui/v1/profiles",
+		"url": "https://"+OCCenvironment+".oracledemos.com/ccstoreui/v1/profiles",
 		"method": "POST",
 		"headers": {
 			"content-type": "application/json"
@@ -675,6 +675,680 @@ function insertCartOCC(productId) {
 
 var getProductsJSON = 
 {
+  "totalResults": 6,
+  "offset": 0,
+  "limit": 250,
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://ccadmin-z0ga.oracleoutsourcing.com/ccstoreui/v1/products?categoryId=ofertasEspeciais"
+    }
+  ],
+  "category": {
+    "longDescription": null,
+    "route": "/ofertas-especiais/category/ofertasEspeciais",
+    "categoryImages": [],
+    "displayName": "Ofertas Especiais",
+    "repositoryId": "ofertasEspeciais",
+    "active": true,
+    "description": null,
+    "id": "ofertasEspeciais"
+  },
+  "items": [
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "20PTSGPA20",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        },
+        {
+          "repositoryId": "orfertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "rootCategory",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=475&width=475",
+      "seoKeywordsDerived": "Vale Compra no Pão de Açúcar Minuto de R$20,00,Ofertas Especiais,Ofertas Especiais",
+      "seoUrlSlugDerived": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T17:33:59.000Z",
+      "route": "/vale-compra-no-p%C3%A3o-de-a%C3%A7%C3%BAcar-minuto-de-r-2000/product/20PTSGPA20",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "seoDescriptionDerived": "Vale Compra no Pão de Açúcar Minuto de R$20,00,Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "description": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png",
+      "seoTitleDerived": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Vale Compra no Pão de Açúcar Minuto de R$20,00",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v2881350882676760882/products/voucherGPA.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "20PTSGPA20",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    },
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Cerveja Fuller London Pride Garrafa 500ml",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "20PTSFULLER100",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=475&width=475",
+      "seoKeywordsDerived": "Cerveja Fuller London Pride Garrafa 500ml,Ofertas Especiais",
+      "seoUrlSlugDerived": "Cerveja Fuller London Pride Garrafa 500ml",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T18:17:56.000Z",
+      "route": "/cerveja-fuller-london-pride-garrafa-500ml/product/20PTSFULLER100",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Cerveja Fuller London Pride Garrafa 500ml",
+      "seoDescriptionDerived": "Cerveja Fuller London Pride Garrafa 500ml,Cerveja Fuller London Pride Garrafa 500ml",
+      "description": "Cerveja Fuller London Pride Garrafa 500ml",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png",
+      "seoTitleDerived": "Cerveja Fuller London Pride Garrafa 500ml",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Cerveja Fuller London Pride Garrafa 500ml",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v3851296971231961808/products/voucherFuller.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "20PTSFULLER100",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    },
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Crédito de R$99,90 na Nespresso",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "20PTSNESPRESSO99",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=475&width=475",
+      "seoKeywordsDerived": "Crédito de R$99,90 na Nespresso,Ofertas Especiais",
+      "seoUrlSlugDerived": "Crédito de R$99,90 na Nespresso",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T18:22:08.000Z",
+      "route": "/cr%C3%A9dito-de-r-9990-na-nespresso/product/20PTSNESPRESSO99",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Crédito de R$99,90 na Nespresso",
+      "seoDescriptionDerived": "Crédito de R$99,90 na Nespresso,Crédito de R$99,90 na Nespresso",
+      "description": "Crédito de R$99,90 na Nespresso",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png",
+      "seoTitleDerived": "Crédito de R$99,90 na Nespresso",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Crédito de R$99,90 na Nespresso",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6102393940693929752/products/voucherNespresso.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "20PTSNESPRESSO99",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    },
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Sandálias Havaianas Vários Modelos (1 par)",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "20PTSHAVAIANAS100",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=475&width=475",
+      "seoKeywordsDerived": "Sandálias Havaianas Vários Modelos (1 par),Ofertas Especiais",
+      "seoUrlSlugDerived": "Sandálias Havaianas Vários Modelos (1 par)",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T18:23:16.000Z",
+      "route": "/sand%C3%A1lias-havaianas-v%C3%A1rios-modelos-1-par/product/20PTSHAVAIANAS100",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Sandálias Havaianas Vários Modelos (1 par)",
+      "seoDescriptionDerived": "Sandálias Havaianas Vários Modelos (1 par),Sandálias Havaianas Vários Modelos (1 par)",
+      "description": "Sandálias Havaianas Vários Modelos (1 par)",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png",
+      "seoTitleDerived": "Sandálias Havaianas Vários Modelos (1 par)",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Sandálias Havaianas Vários Modelos (1 par)",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v4205908207136234654/products/voucherHavaianas.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "20PTSHAVAIANAS100",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    },
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Crédito de R$100,00 em compras na Rihappy",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "20PTSRIHAPPY100",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=475&width=475",
+      "seoKeywordsDerived": "Crédito de R$100,00 em compras na Rihappy,Ofertas Especiais",
+      "seoUrlSlugDerived": "Crédito de R$100,00 em compras na Rihappy",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T18:24:45.000Z",
+      "route": "/cr%C3%A9dito-de-r-10000-em-compras-na-rihappy/product/20PTSRIHAPPY100",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Crédito de R$100,00 em compras na Rihappy",
+      "seoDescriptionDerived": "Crédito de R$100,00 em compras na Rihappy,Crédito de R$100,00 em compras na Rihappy",
+      "description": "Crédito de R$100,00 em compras na Rihappy",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png",
+      "seoTitleDerived": "Crédito de R$100,00 em compras na Rihappy",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Crédito de R$100,00 em compras na Rihappy",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "20PTSRIHAPPY100",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    },
+    {
+      "listVolumePrice": null,
+      "excludeFromSitemap": false,
+      "relatedProducts": null,
+      "orderLimit": null,
+      "listPrices": {
+        "reaisB2C": null
+      },
+      "type": null,
+      "seoMetaInfo": null,
+      "largeImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=940&width=940"
+      ],
+      "listVolumePrices": {
+        "reaisB2C": null
+      },
+      "addOnProducts": [],
+      "primaryImageAltText": "Crédito de R$200,00 em compras na Rihappy",
+      "x_ageGroup": "Adult",
+      "x_topSeller": 0,
+      "id": "40PTSRIHAPPY200",
+      "requiresServiceProvision": false,
+      "brand": null,
+      "x_boostRanking": 0,
+      "parentCategories": [
+        {
+          "repositoryId": "ofertasEspeciais",
+          "fixedParentCategories": [
+            {
+              "repositoryId": "cat60001",
+              "fixedParentCategories": []
+            }
+          ]
+        }
+      ],
+      "height": null,
+      "defaultProductListingSku": null,
+      "unitOfMeasure": null,
+      "primaryMediumImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=475&width=475",
+      "seoKeywordsDerived": "Crédito de R$200,00 em compras na Rihappy,Ofertas Especiais",
+      "seoUrlSlugDerived": "Crédito de R$200,00 em compras na Rihappy",
+      "weight": null,
+      "active": true,
+      "voiceCompatibleBrand": "None",
+      "thumbImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=100&width=100"
+      ],
+      "creationDate": "2019-04-10T18:26:28.000Z",
+      "route": "/cr%C3%A9dito-de-r-20000-em-compras-na-rihappy/product/40PTSRIHAPPY200",
+      "relatedArticles": [],
+      "voiceCompatible": "None",
+      "mediumImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=475&width=475"
+      ],
+      "primarySourceImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300",
+      "parentCategory": null,
+      "sourceImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300"
+      ],
+      "primarySmallImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300",
+      "x_territoryList": null,
+      "avgCustRating": null,
+      "longDescription": null,
+      "primaryThumbImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=100&width=100",
+      "nonreturnable": false,
+      "displayName": "Crédito de R$200,00 em compras na Rihappy",
+      "seoDescriptionDerived": "Crédito de R$200,00 em compras na Rihappy,Crédito de R$200,00 em compras na Rihappy",
+      "description": "Crédito de R$200,00 em compras na Rihappy",
+      "x_territory": null,
+      "salePrices": {
+        "reaisB2C": null
+      },
+      "primaryFullImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png",
+      "seoTitleDerived": "Crédito de R$200,00 em compras na Rihappy",
+      "primaryLargeImageURL": "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=940&width=940",
+      "smallImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png&height=300&width=300"
+      ],
+      "shippingSurcharges": {
+        "reaisB2C": null
+      },
+      "x_saleBadge": "None",
+      "saleVolumePrices": {
+        "reaisB2C": null
+      },
+      "primaryImageTitle": "Crédito de R$200,00 em compras na Rihappy",
+      "saleVolumePrice": null,
+      "childSKUs": [],
+      "relatedMediaContent": [],
+      "salePrice": null,
+      "fullImageURLs": [
+        "/ccstore/v1/images/?source=/file/v6813491356852776773/products/voucherRihappy.png"
+      ],
+      "length": null,
+      "x_stockStatus": 0,
+      "x_gender": null,
+      "variantValuesOrder": {},
+      "notForIndividualSale": false,
+      "repositoryId": "40PTSRIHAPPY200",
+      "width": null,
+      "shippingSurcharge": null,
+      "productImagesMetadata": [
+        {}
+      ],
+      "configurable": false,
+      "listPrice": null
+    }
+  ]
+}
+/*{
     "totalResults": 12,
     "offset": 0,
     "limit": 250,
@@ -2556,7 +3230,7 @@ var getProductsJSON =
         }
     ]
 }
-
+*/
 
 
 
