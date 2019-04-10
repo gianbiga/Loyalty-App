@@ -137,7 +137,7 @@ getMemberPoints("balance");
       var container = document.getElementById("voucherContainer");
       var row = template.cloneNode(true);
       row.querySelectorAll(".voucher-title")[0].innerHTML = value.displayName;
-      row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = "url(https://"+OCCenvironment+".oracledemos.com/"+value.primaryMediumImageURL+"')";
+      row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = "url('https://ucf4-occ0040-occ.oracledemos.com/"+value.primaryMediumImageURL+"')";
       row.querySelectorAll(".card--small--vouchers")[0].id = value.id;
       row.querySelectorAll(".voucher-price")[0].innerHTML = value.listPrice + "<span> PTS</span>"; 
       container.appendChild(row);
