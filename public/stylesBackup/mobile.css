@@ -178,7 +178,7 @@
  h1, h2, h3, h4, h5, h6 {
      font-family: 'Lato';
      font-weight: 400;
-     margin: 5px 0;
+     margin: 10px 0;
 }
  .w3-wide {
      letter-spacing: 4px 
@@ -561,6 +561,7 @@
  .voucher-container {
      position: absolute;
      top: 112px;
+     margin-bottom: 72px;
      width: 100%;
 }
 
@@ -1084,9 +1085,9 @@
      height: 200px;
 }
  header .logo2 {
-     width: 85px;
-     height: 53px;
-     margin-top: 10px;
+     width: 159px;
+     height: 158px;
+     margin-top: -40px;
 }
  .avatar {
      height:90px;
@@ -1121,7 +1122,7 @@
 /*Tamanho dos itens do menu*/
  .menu-icon{
      font-size: 30px !important;
-     padding-left: 16px !important;
+     padding-left: 21px !important;
      padding-right: 27px !important;
 }
  .cart{
@@ -1155,7 +1156,7 @@
      font-family: 'Lato';
      font-weight: 1000;
      color: #333333;
-     font-size: 20px;
+     font-size: 24px;
      padding-top: 15px;
      max-width: 70%;
      margin-left: 15%;
@@ -1280,6 +1281,7 @@
      color: white;
      margin: 15px;
 }
+
 
  .popup-product-desc{
      font-size: 18px;
@@ -1901,7 +1903,7 @@ min-height: 5px;
      width: 100%;
      text-align: justify;
      justify-content: space-around;
-     height: 100px;
+     height: 92px;
      /* box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); */
 }
  .balance-profile_image{
@@ -2043,9 +2045,9 @@ form#ecSearchForm {
     text-align: justify;
 }
 
-h1#howto-titleÂ {
- text-align:Â center;
-font-size:Â 30px;
+h1#howto-title {
+ text-align: center;
+font-size: 30px;
 }
 
 .serviceDetailsTitle{
@@ -2119,3 +2121,62 @@ height: auto;
     padding-top: 16px;
 }
 
+.top-left{
+    position: absolute;
+    left: 17px;
+    top: 24px;
+}
+
+.popup-error-title{
+     font-family: 'Lato';
+     font-weight: 1000;
+     color: #333333;
+     font-size: 24px;
+     padding-top: 15px;
+     max-width: 70%;
+     margin-left: 15%;
+     word-wrap: break-word;
+     margin-top: 4%;
+}
+
+ .popup-error-close{
+     color: #FFD833;
+     font-size: 29px;
+     font-weight: bold;
+     right: -6px;
+     position: absolute;
+     top: -9px;
+     font-family: 'Lato';
+}
+ .popup-error-header{
+     font-family: 'Lato';
+     font-weight: bold;
+     color: #ffffff;
+     background: #272727;
+     font-size: 22px;
+     height: 57px;
+     padding: 10px;
+     padding-right: 24px;
+     padding-left: 24px;
+     padding-top: 21px;
+     text-align: center;
+     word-wrap: break-word;
+}
+ .popup-error-product{
+     /* height: 140px; */
+     width: 100%;
+     /* max-width: 300px; */
+     margin-top: -10px;
+}
+ .popup-error-desc{
+     font-size: 18px;
+     font-family: 'Lato';
+     text-align: justify;
+     margin: 15px;
+}
+ .popup-error-desc{
+     font-size: 18px;
+     font-family: 'Lato';
+     text-align: justify;
+     margin: 15px;
+}

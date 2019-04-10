@@ -24,7 +24,7 @@
   height: 100px;
   z-index: 1000000 !important;
   position: absolute;
-  top: -70px;
+  top: -27px;
   left: 44%;
   animation: loadingLogo 1s;
   animation-fill-mode:forwards;

@@ -259,7 +259,7 @@ background: #4caf50;
 .icon_column{
     color: #3c3c3c;
     display: inline-block;
-    min-width: 48px;
+    min-width: 60px;
     position: relative;
     text-align: center;
     vertical-align: top;
@@ -286,7 +286,7 @@ background: #4caf50;
 .icon_adj_profile{
     /* filter: grayscale(100%); */
     background-position: center !important;
-    background-size: 31px !important;
+    background-size: 34px !important;
     background-repeat: no-repeat !important;
 }
 
@@ -302,9 +302,9 @@ background: #4caf50;
 .mission_adj_profile{
     border-radius: 98px;
     display: inline-block;
-    height: 40px;
+    height: 45px;
     /* margin: 0 0 13px; */
-    width: 40px;
+    width: 45px;
     box-shadow: 2px 2px 2px 1px #c8c8c8;
 }
 
@@ -314,7 +314,7 @@ background: #4caf50;
     font-size: 17px;
     width: 100px;
     font-weight: 700;
-    left: -16px;
+    left: -8px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 29px;

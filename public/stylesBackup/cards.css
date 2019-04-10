@@ -46,10 +46,10 @@
 
 .card__title {
     user-select: none;
-    font-size: 15px;
+    font-size: 17px;
     margin: 0;
     position: absolute;
-    right: 0px;
+    right: 0;
     padding: 0 16px;
     font-weight: bold;
     white-space: normal;
@@ -62,7 +62,7 @@
 }
 .card__subtitle {
     user-select: none;
-    font-size: 14px;
+    font-size: 15px;
     display: block;
     white-space: pre-wrap;
     text-overflow: ellipsis;
@@ -163,7 +163,7 @@
   background-repeat: no-repeat;
   /* background-position-x: 100px; */
   height: 150px;
-  max-width: 140px;
+  max-width: 148px;
   top: 0;
   object-fit: cover;
   position: absolute;
@@ -198,8 +198,8 @@ text-align: left;
 
 .card_column{
   float: left;
-  width: 85px;
-  height: 95px;
+  width: 100px;
+  height: 106px;
   padding: 10px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
   border-radius: 10px;
@@ -241,7 +241,7 @@ text-align: left;
 }
 
 .card-titulo{
-  font-size: 16.5px;
+  font-size: 18px;
   font-weight: bold !important;
 }
 
@@ -461,11 +461,11 @@ text-align: left;
   position: relative;
   color: black;
   left: 3%;
-  bottom: -79px;
+  bottom: -76px;
   font-weight: bold;
   font-family: 'Lato';
-  font-size: 14px;
-  max-width: 53%;
+  font-size: 15px;
+  max-width: 47%;
   text-align: left;
 }
 
@@ -570,7 +570,7 @@ font-weight: bold;
 }
 .profile-points-label{
 
-font-size: 22px;
+font-size: 18px;
 
 text-transform: uppercase;
 
@@ -618,7 +618,7 @@ position: absolute;
 
 top: 103px;
 
-left: 39%;
+left: 35%;
 }
 .profile-badges{
 

@@ -2,7 +2,7 @@
 
 .simform {
 	position: relative;
-	margin: -2px auto;
+	margin: -22px auto;
 	padding: 2em 1px;
 	max-width: 860px;
 	width: 100%;
@@ -264,7 +264,7 @@
 }
 
 .final-message {
-	top: 50%;
+	top: 120%;
 	left: 0;
 	padding: 0.5em;
 	width: 100%;
