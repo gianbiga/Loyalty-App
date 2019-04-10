@@ -118,7 +118,7 @@
 getMemberPoints("balance");
 
 /*Anti-CORS*/
-/*$.each(getProductsJSON.items, function(index,value){
+$.each(getProductsJSON.items, function(index,value){
   var template = document.getElementById("voucherTemplate");
   var container = document.getElementById("voucherContainer");
   var row = template.cloneNode(true);
@@ -128,10 +128,10 @@ getMemberPoints("balance");
   row.querySelectorAll(".voucher-price")[0].innerHTML = value.listPrice + "<span> PTS</span>"; 
   container.appendChild(row);
   row.setAttribute("class","w3-cell-row");
-})*/
+})
 
 /*Produtos do OCC*/
-  getOCCProductsFromCollection(productCollection).then(function(res) {
+/*  getOCCProductsFromCollection(productCollection).then(function(res) {
     $.each(res.items, function(index,value){
       var template = document.getElementById("voucherTemplate");
       var container = document.getElementById("voucherContainer");
@@ -143,7 +143,7 @@ getMemberPoints("balance");
       container.appendChild(row);
       row.setAttribute("class","w3-cell-row");
     })
-  })
+  })*/
 
 </script>
 
