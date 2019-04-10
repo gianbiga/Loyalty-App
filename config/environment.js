@@ -12,7 +12,7 @@ loyalty = {
 };
 
 commerce = {
-	environment : "ucf4-occ0077-occ",
+	environment : "ccstore-z0ga",
 	productCollection : "ofertasEspeciais"
 };
 

@@ -10,7 +10,7 @@ var loyaltyProgram = "Programa de Fidelidade";
 var pointType = "Pontos";
 
 /*COMMERCE ENVIRONMENT*/
-var OCCenvironment = "ucf4-occ0077-occ";
+var OCCenvironment = "ccstore-z0ga";
 var productCollection = "ofertasEspeciais";
 
 
