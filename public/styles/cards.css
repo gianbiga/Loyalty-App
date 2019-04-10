@@ -1,0 +1,682 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+.hidden{
+  display: none;
+}
+.card {
+  will-change: transform;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #fafafa;
+  height: 35%;
+  width: auto;
+  transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+}
+.card:hover {
+  cursor: pointer;
+}
+.card__image {
+    position: absolute;
+    /* background-size: 82px; */
+    /* background-repeat: no-repeat; */
+    /* background-position-x: 40px !important; */
+    /* background-position: center; */
+    overflow: hidden;
+    /* margin-top: 20px; */
+    display: block;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card__image:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 500ms;
+  bottom: 0;
+}
+
+.fa-4x {
+    font-size: 50px !important;
+}
+
+.card__title {
+    user-select: none;
+    font-size: 15px;
+    margin: 0;
+    position: absolute;
+    right: 0px;
+    padding: 0 16px;
+    font-weight: bold;
+    white-space: normal;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    width: 100%;
+    color: #6a6a6a !important;
+    overflow: hidden;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card__subtitle {
+    user-select: none;
+    font-size: 14px;
+    display: block;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    right: 0;
+    width: 55%;
+    font-weight: bold;
+    top: 30px;
+    position: absolute;
+    padding: 20px 16px;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card__text {
+    user-select: none;
+    font-size: 13px;
+    white-space: normal;
+    color: #6c6c6c !important;
+    word-break: break-word;
+    display: block;
+    width: 55%;
+    left: 5px;
+    right: 0;
+    top: 85px;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    transition: delay 0.1s;
+}
+.card__action-bar {
+    user-select: none;
+    position: absolute;
+    bottom: 0;
+    top: 40%;
+    right: 0;
+    padding: 0 8px;
+    transition: left 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card__button {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  line-height: 52px;
+  padding: 0 16px;
+  color: #5ebd7b;
+}
+.card--small--profile{
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  height: 136px;
+  border-radius: 10px;
+  min-height: 171px;
+  margin: 5px;
+}
+
+
+
+.card--small--profile .card__image {
+  border-radius: 1px 0 0 1px;
+  right: 10%;
+  top: 0;
+  opacity: 1;
+  width: 30%;
+  height: 20%;
+  padding-top: 120px;
+  max-height: 140px;
+}
+.card--small--profile .card__image:after {
+  opacity: 0;
+}
+.card--small--profile .card__title {
+  color: #000;
+  left: 0;
+  top: 20px;
+  /* text-align: left; */
+}
+.card--small--profile .card__subtitle {
+  opacity: 1;
+  left: 0px;
+  text-align: left;
+}
+.card--small--profile .card__text {
+}
+.card--small--profile .card__action-bar {}
+
+.card--small {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  height: 136px;
+  border-radius: 10px;
+  min-height: 145px;
+  margin: 5px;
+}
+
+
+.card--small .card__image {
+  border-radius: 1px 0 0 1px;
+  right: 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background-position-x: 100px; */
+  height: 150px;
+  max-width: 140px;
+  top: 0;
+  object-fit: cover;
+  position: absolute;
+  opacity: 1;
+  /* width: 30%; */
+  /* height: 20%; */
+  /* padding-top: 120px; */
+  /* max-height: 140px; */
+}
+.card--small .card__image:after {
+  opacity: 0;
+}
+.card--small .card__title {
+  color: #000;
+  left: 0;
+  top: 20px;
+  max-width: 250px;
+  /* text-align: left; */
+}
+.card--small .card__subtitle {
+  opacity: 1;
+  left: 0px;
+  text-align: left;
+}
+.card--small .card__text {
+}
+.card--small .card__action-bar {}
+
+.card__content{
+text-align: left;
+}
+
+.card_column{
+  float: left;
+  width: 85px;
+  height: 95px;
+  padding: 10px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.card_line{
+  display: flex;
+  margin-top: 15px;
+  clear: both;
+  content: "";
+  width: 100%;
+  margin: auto;
+  text-align: justify;
+  justify-content: space-around;
+  /* margin-left: 10px; */
+}
+
+
+.location-column{
+    float: left;
+    width: 80%;
+}
+
+.location-row{
+    margin: auto;
+}
+
+.card-content{
+  text-align: center;
+  border-radius: 21px;
+}
+
+.card-icon{
+  padding-top: 5px;
+  color: #574c4c45;
+  text-decoration: none;
+}
+
+.card-titulo{
+  font-size: 16.5px;
+  font-weight: bold !important;
+}
+
+
+
+.card__title2 {user-select: none;font-size: 22px;font-family: 'Lato';font-weight: bold;text-overflow: ellipsis;margin-left: 20px;overflow: hidden;transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);max-width: 75%;}
+.card__subtitle2 {
+    user-select: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    right: 0;
+    margin-left: 20px;
+    font-family: 'Lato';
+    max-width: 75%;
+}
+.card__text2 {
+  user-select: none;
+  text-align: left;
+  font-size: 15px;
+  color: #766666;
+  font-family: 'Lato';
+  margin-left: 20px;
+  margin-top: 4px;
+  position: absolute;
+  overflow: hidden;
+  transition: delay 0.1s;
+  max-width: 65%;
+}
+
+.card--small2 .card__title2 {
+    color: #333;
+    left: 0;
+    width: 75%;
+    top: 20px;
+    text-align: left;
+}
+.card--small2 .card__subtitle2 {
+    opacity: 1;
+    left: 0px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 75%;
+    white-space: normal;
+    margin-top: -7px;
+}
+
+.text-red{
+  color: #ea0000;
+}
+
+.text-yellow{
+  color: #FBB723;
+}
+
+.text-green{
+  color: #018E42;
+}
+
+
+.card--small2 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+    height: 140px;
+    border-radius: 2px;
+    min-height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+.card--small2 .card__image2{position: absolute;right: 0;opacity: 1;top: 0;background-repeat: no-repeat;}
+
+.card__image2 {
+  background-size: 150px;
+  background-position: center;
+  height: 80% !important;
+  width: 30% !important;
+  margin-top: 30px;
+}
+
+.card-counter{
+    position: absolute;
+    right: 8;
+    top: -13;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lato';
+}
+
+.card--small3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  height: 125px;
+  border-radius: 2px;
+  min-height: 100px;
+  margin: 15px;
+  margin-bottom: -7px !important;
+}
+
+
+.card--small3 .card__image3 {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+  top: 0;
+  background-repeat: no-repeat;
+}
+
+.card__image3 {
+  background-size: 100px;
+  background-position: center;
+  height: 40% !important;
+  max-height: 130px;
+  margin: 5px;
+  margin-right: 10px !important;
+  margin-top: 10px;
+}
+
+.card--small3 .card__title2 {
+    color: #333;
+    left: 0;
+    width: 75%;
+    top: 20px;
+    text-align: right;
+}
+.card--small3 .card__subtitle2 {
+    opacity: 1;
+    left: 0px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 75%;
+    white-space: normal;
+    margin-top: -7px;
+}
+
+
+.card--small--vouchers {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+  height: 147px;
+  border-radius: 16px;
+  min-height: 100px;
+  margin: 6px;
+  background-image: url(../images/products/voucherEtna.png);
+  background-size: 400px;
+  margin-bottom: 4px !important;
+}
+
+
+.card--small--vouchers .card__image__vouchers {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+  top: 0;
+  background-repeat: no-repeat;
+}
+
+.card__image__vouchers {
+  background-size: 100px;
+  background-position: center;
+  height: 99% !important;
+  max-height: 130px;
+  /* margin: 5px; */
+  margin-right: 10px !important;
+  /* margin-top: 10px; */
+}
+
+.card--small--vouchers .card__title2 {
+    color: #333;
+    left: 0;
+    width: 75%;
+    top: 20px;
+    text-align: right;
+}
+.card--small--vouchers .card__subtitle2 {
+    opacity: 1;
+    left: 0px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 75%;
+    white-space: normal;
+    margin-top: -7px;
+}
+
+.location-dist{
+  position: absolute;
+  bottom: 20px;
+  left: 6px;
+  font-size: 16px;
+  color: #ff3d00;
+  font-weight: bold;
+}
+
+.location-place{
+  position: relative;
+  left: 25%;
+  font-family: 'Lato';
+  font-size: 18px;
+  text-align: left;
+}
+
+.voucher-subtitle{
+  user-select: none;
+  text-align: left;
+  font-size: 14px;
+  color: #766666;
+  margin-top: -9px;
+  font-family: 'Lato';
+  left: 43%;
+  /* top: 15%; */
+  position: relative;
+  overflow: hidden;
+  transition: delay 0.1s;
+  max-width: 73%;
+}
+
+.voucher-title{
+  position: relative;
+  color: black;
+  left: 3%;
+  bottom: -79px;
+  font-weight: bold;
+  font-family: 'Lato';
+  font-size: 14px;
+  max-width: 53%;
+  text-align: left;
+}
+
+.voucher-list-price{
+
+}
+
+.voucher-price{
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-family: 'Lato';
+  font-size: 22px;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.voucher-status{
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-family: 'Lato';
+  font-size: 22px;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+div#voucherTemplate {
+    margin-bottom: 10px;
+}
+
+.voucher-select{
+  color: #000000;
+  position: absolute;
+  font-family: 'Lato';
+  font-size: 15px;
+  font-weight: bold;
+  right: 2%;
+  bottom: 0;
+  text-transform: uppercase;
+  background: #efca2c;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.location-status{
+  position: relative;
+  left: 25%;
+  font-family: 'Lato';
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.location-rating{
+  position: relative;
+  left: 25%;
+  font-family: 'Lato';
+  color: #ffc300;
+  margin-top: -5px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.location-select{
+  color: #fec91b;
+  position: absolute;
+  font-family: 'Lato';
+  font-size: 20px;
+  font-weight: bold;
+  right: 2%;
+  bottom: 0;
+  text-transform: uppercase;
+  background: #fafafa;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+.card-prof-column-1 {
+    position: absolute;
+    left: 2px;
+    top: 15px;
+    border-right: 1px solid #e5e3e3;
+    padding-right: 9px;
+}
+
+.profile-points{
+
+font-size: 34px;
+
+font-weight: bold;
+}
+.profile-points-label{
+
+font-size: 22px;
+
+text-transform: uppercase;
+
+font-weight: bold;
+
+color: #f7cf25;
+}
+
+.profile-img{
+    width: 122px;
+    height: 92px;
+    y: 16px;
+}
+
+.card-prof-column-1{
+
+}
+.card-prof-column-2{
+
+position: absolute;
+
+left: 42%;
+
+top: 12%;
+}
+.card-prof-column-3{position: absolute;left: 66%;max-width: 145px;word-break: break-all;top: 21%;}
+
+.profile-level{
+
+font-size: 23px;
+
+text-transform: uppercase;
+
+font-weight: bold;
+
+margin-top: -10px;
+
+margin-bottom: 4px;
+}
+.profile-level-label{font-size: 22px;text-transform: uppercase;font-weight: bold;color: #f7cf25;}
+
+.card-prof-column-4{
+
+position: absolute;
+
+top: 103px;
+
+left: 39%;
+}
+.profile-badges{
+
+}
+.profile-badges-label{
+
+}
+
+.voucher-description{
+
+}
+.voucher-activate-button{
+
+}
+/*
+.flip-card {
+  background: #272727cf !important;;
+  transform: rotate3d(0, 1, 0, 180deg);
+  transition-duration: 1.0s;
+}
+*/
+
+.card__content-service{
+text-align: left;
+
+}
+.card__title-service{
+    user-select: none;
+    font-size: 17px;
+    margin: 0;
+    position: absolute;
+    left: 5;
+    top: 10%;
+    padding: 0 16px;
+    font-weight: bold;
+    white-space: normal;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    width: 100%;
+    color: #6a6a6a !important;
+    overflow: hidden;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card__text-service{
+    user-select: none;
+    font-size: 13px;
+    white-space: normal;
+    color: #6c6c6c !important;
+    word-break: break-word;
+    display: block;
+    width: 100%;
+    left: 10px;
+    right: 0;
+    top: 55px;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    transition: delay 0.1s;
+}
+
