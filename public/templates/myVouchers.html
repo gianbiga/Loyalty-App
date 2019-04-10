@@ -92,7 +92,8 @@
       row.querySelectorAll(".card--small--vouchers")[0].id = value.LoyMemVchrId;
 
       $.each(getProductsJSON.items, function(index2,valueOCC){
-        if(valueOCC.displayName == value.VoucherType){row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = "url('https://ucf4-occ0077-occ.oracledemos.com/"+valueOCC.mediumImageURLs[1]+"')";}
+        if(valueOCC.displayName == value.VoucherType){row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = 
+          "url('https://ucf4-occ0040-occ.oracledemos.com"+value.primaryMediumImageURL+"')";}
       })
 
       row.querySelectorAll(".voucher-status")[0].innerHTML =value.voucherStatus; 
