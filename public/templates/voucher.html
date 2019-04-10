@@ -399,8 +399,8 @@ function setProgress(percent) {
 
 getOCCProductsFromCollection('destaques').then(function(res){
    $.each($('.banner-img'), function(index,value){
-    console.log(res.items)
-    value.src = 'https://ucf4-occ0040-occ.oracledemos.com'+res.items[index].primaryMediumImageURL;
+    console.log(res.category.categoryImages[index].url)
+    value.src = res.category.categoryImages[index].url;
   })
 })
 
