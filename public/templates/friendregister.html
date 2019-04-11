@@ -102,7 +102,7 @@ body {
 							.then(function(res){
 								console.log(getURLParameters('memberID'));
 									dumbTransaction(getURLParameters('memberID')).then(function(res2){
-										
+										console.log('res -> ',res);
 										localStorage.setItem('MemberID',res.MemberNumber);
 										memberNumber = localStorage.getItem('MemberID');
 										getSpecificMember(res.ReferredByNumber).then(function(res3){
