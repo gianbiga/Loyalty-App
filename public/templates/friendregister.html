@@ -103,7 +103,7 @@ body {
 								console.log(getURLParameters('memberID'));
 									dumbTransaction(getURLParameters('memberID')).then(function(res2){
 										console.log('res -> ',res);
-										localStorage.setItem('MemberID',res.MemberNumber);
+										localStorage.setItem('MemberID',res.loyaltyData.MemberNumber);
 										memberNumber = localStorage.getItem('MemberID');
 										getSpecificMember(res.ReferredByNumber).then(function(res3){
 											console.log(res.ReferredByNumber)
