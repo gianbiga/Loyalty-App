@@ -105,9 +105,9 @@ body {
 										console.log('res -> ',res);
 										localStorage.setItem('MemberID',res.loyaltyData.MemberNumber);
 										memberNumber = localStorage.getItem('MemberID');
-										getSpecificMember(res.ReferredByNumber).then(function(res3){
-											console.log(res.ReferredByNumber)
-											sendSMS(res3.EmailAddress.substring(1,res.EmailAddress.length),'Seu%20amigo%20acaba%20de%20se%20registar.%20Voce%20ganhou%205%20pontos');
+										getSpecificMember(res.loyaltyData.ReferredByNumber).then(function(res3){
+											console.log(res.loyaltyData.ReferredByNumber)
+											sendSMS(res3.EmailAddress.substring(1,res.loyaltyData.EmailAddress.length),'Seu%20amigo%20acaba%20de%20se%20registar.%20Voce%20ganhou%205%20pontos');
 											localStorage.setItem('PushPrePaid', '0');
 											localStorage.setItem('LevelPopUp', '0');
 											setTimeout(function(){location.href='voucher.html';},3000)
