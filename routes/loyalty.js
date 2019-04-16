@@ -16,6 +16,7 @@ module.exports = function (app) {
 	var whitelist = ['https://coalitionappgb.herokuapp.com', 'http://example2.com']
 	var corsOptions = {
 	  origin: function (origin, callback) {
+	  	console.log(origin);
 	    if (whitelist.indexOf(origin) !== -1) {
 	      callback(null, true)
 	    } else {
