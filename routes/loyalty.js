@@ -14,7 +14,7 @@ module.exports = function (app) {
 
 
 	var corsOptions = {
-	  origin: 'http://example.com',
+	  origin: 'https://oracoalitiongb.netlify.com',
 	  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 	}
 
