@@ -1,0 +1,303 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: A responsive product grid layout with touch-friendly Flickity galleries and Isotope-powered filter functionality." />
+  <meta name="keywords" content="blueprint, template, layout, grid, responsive, products, store, filter, isotope, flickity" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../styles/skilltree.css">
+  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
+    <link rel="stylesheet" type="text/css" href="../styles/svg.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+</head>
+<body>
+
+<!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app" style="position: fixed;">
+    <img src="../images/logo.png" class="logo2">
+  </header>
+
+<div class="w3-container" style="margin-top:65px">
+
+
+<!-- POPUP -->
+  <div id="popup" class="w3-modal">
+    <div class="w3-modal-content-mission w3-card-4 w3-animate-top">
+      <header class="modal-mission-header"> 
+        <span onclick="document.getElementById('popup').style.display='none'" 
+        class="w3-button w3-display-topright popup-close-mission">&times;</span>
+        <h1 id="prod-header" class="popup-header-mission">Sanduíche de Carne Bovina</h1>
+      </header>
+      <div class="modal-mission-middle">
+        <img id="prod-img" src="../images/badges/promobigmc.jpg" class="popup-mission-product">
+        <h2 id="prod-title" class="popup-title-mission">Big Mac</h2>
+        <p id="prod-desc" class="popup-product-desc-mission">Não existe nada igual. Dois hambúrgeres, alface, queijo, molho especial, cebola, picles num pão com gergelim</p>
+      </div>
+      <footer class="modal-mission-footer">
+        <button id="prod-button" onclick="location.href = buttonLink" class="button-mission-activate3">INICIAR</button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SKILL TREE -->
+ <div class="skill_tree">
+  <div data-test="skill-tree">
+      <div class="tiers">
+        <span>Bronze</span>
+      </div>
+     <div class="icon_row">
+        <a id="voucher-1-1" data-test="red skill-tree-link" onclick="productPopup('firststeps', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 baby color_disabled">
+           </span>
+           <span class="mission_text">Primeiros Passos</span>
+        </a>
+        <a id="voucher-1-2" data-test="blue skill-tree-link" onclick="productPopup('invitefriend', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 friend color_disabled">
+           </span>
+           <span class="mission_text">Convide um Amigo</span>
+        </a>
+        <a id="voucher-1-3" data-test="red skill-tree-link" onclick="productPopup('collaboration', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 collaboration color_disabled">
+           </span>
+           <span class="mission_text">Colaboração</span>
+        </a>
+     </div>
+     <div class="icon_row">
+        <a id="voucher-2-1" data-test="green skill-tree-link" onclick="productPopup('congrats', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 congrats color_disabled">
+           </span>
+           <span class="mission_text">Parabéns!</span>
+        </a>
+        <a id="voucher-2-2" data-test="blue skill-tree-link" onclick="productPopup('different', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 diferent color_disabled secret">
+           </span>
+           <span class="mission_text">Diferente</span>
+        </a>
+        <a id="voucher-2-3" data-test="green skill-tree-link" onclick="productPopup('family', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 family color_disabled">
+           </span>
+           <span class="mission_text">Família</span>
+        </a>
+     </div>
+      <div class="tiers">
+        <span>Prata</span>
+      </div>
+     <div class="icon_row">
+        <a id="voucher-3-1" data-test="red skill-tree-link" onclick="productPopup('furniture', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 decoration color_disabled">
+           </span>
+           <span class="mission_text">Decorador</span>
+        </a>
+        <a id="voucher-3-2" data-test="blue skill-tree-link" onclick="productPopup('popular', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 popular color_disabled secret">
+           </span>
+           <span class="mission_text">Popular</span>
+        </a>
+        <a id="voucher-3-3" data-test="green skill-tree-link" onclick="productPopup('hiker', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 hiker color_disabled">
+           </span>
+           <span class="mission_text">Desbravador</span>
+        </a>
+     </div>
+     <div class="icon_row hide">
+        <a id="voucher-3-4" data-test="green skill-tree-link" onclick="productPopup('gpalover', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 paodeacucar color_disabled">
+           </span>
+           <span class="mission_text">Lover</span>
+        </a>
+     </div>
+      <div class="tiers">
+        <span>Ouro</span>
+      </div>
+     <div class="icon_row">
+        <a id="voucher-4-1" data-test="red skill-tree-link" onclick="productPopup('giver', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 giver color_disabled">
+           </span>
+           <span class="mission_text">Doação</span>
+        </a>
+        <a id="voucher-4-2" data-test="blue skill-tree-link" onclick="productPopup('service', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 service color_disabled">
+           </span>
+           <span class="mission_text">Atendimento</span>
+        </a>
+        <a id="voucher-4-3" data-test="green skill-tree-link" onclick="productPopup('expert', this.id)" class="icon_column">
+           <span id="" class="mission_adj icon_adj color_yellow2 expert color_disabled">
+           </span>
+           <span class="mission_text" style="">Expert</span>
+        </a>
+     </div>
+
+
+
+   </div>
+</div>
+   <div id="informationPopup" class="w3-modal">
+    <div class="popup-simple w3-card-4 w3-animate-top">
+      <header class="modal-header"> 
+         <h1 id="prod-header" class="popup-header-simple">Level UP!</h1>
+
+  <div class="svg-container">
+      <svg id="svg"><defs></defs><g i:extraneous="self" transform="matrix(2,0,0,2,20,40)">
+    <g id="shadow">
+      <ellipse id="boy_shadow" fill="#B1B3B6" cx="51.6" cy="122.3" rx="29.3" ry="4.9" transform="matrix(0,0,0,0,51.6,122.3)"></ellipse>
+    </g>
+    <g id="boy-block" transform="matrix(1,0,0,1,0,-19.1507)" style="opacity: 1;">
+      <g id="fire">
+        <path id="fire_1" fill="#F04E3E" d="M0.238,103.486c2.965-0.617,2.993-0.621,2.993-0.621s-2.501,5.562-1.943,16.153
+          c2.121-2.027,2.128-2.028,2.128-2.028s-0.324,8.098,4.786,21.776c6.282-3.459,15.311-19.698,15.311-19.698l0.548,4.063
+          c0,0,4.725-8.811,4.813-16.441c1.198,2.107,2.206,2.706,2.206,2.706S29.508,93.385,20.043,89.92
+          C11.323,90.441,2.349,94.929,0.238,103.486z" transform="matrix(0.9997,0.0241,-0.0241,0.9997,1.9545,1.8069)" style="opacity: 1;"></path>
+        <path id="fire_2" fill="#F89F65" d="M9.525,100.177c1.385-0.289,1.398-0.29,1.398-0.29s-1.168,2.598-0.907,7.546
+          c0.991-0.947,0.994-0.948,0.994-0.948s-0.151,3.784,2.236,10.174c2.935-1.617,7.153-9.203,7.153-9.203l0.255,1.898
+          c0,0,2.208-4.116,2.249-7.681c0.56,0.984,1.03,1.263,1.03,1.263s0.465-6.969-5.277-9.669C15.162,94.113,10.512,96.18,9.525,100.177
+          z" transform="matrix(0.9997,0.0248,-0.0248,0.9997,1.9532,1.8012)" style="opacity: 1;"></path>
+      </g>
+      <g id="rocket">
+        <path id="rocket_1" fill="#322B29" d="M6.813,87.4c0,0,6.358-55.997,27.136-50.47c22.788,6.061,0.603,57.849,0.603,57.849L6.813,87.4z"></path>
+        <path id="rocket_2" fill="#5F5654" d="M11.23,88.575l18.973,5.047c0,0,1.034,3.933-10.216,1.1C8.57,91.888,11.23,88.575,11.23,88.575z"></path>
+      </g>
+      <g id="pants">
+        <path id="pants-left" fill="#826AAF" d="M35.667,51.667c0,0-14.659,34.094,4.046,44.195l0,0l0.163,11.746L33.25,117.75l5.25,2l7.833-10.167
+          l3.375-10.927C74.777,101.942,79,82.844,81.333,61.508C73.625,59.875,35.667,51.667,35.667,51.667z"></path>
+        <path id="pants-right" fill="#625083" d="M53.982,99.006l6.635,7.513l1.071,10.938l5.022-0.245l0.764-13.162l-3.939-6.29
+          C60.814,98.674,57.656,99.118,53.982,99.006z"></path>
+      </g>
+      <g id="jumper">
+        <path id="jumper-main" fill="#FFD400" d="M94.969,47.441l-3.863-1.843L77.083,59.417c-17.134-9.208-41.417-7.75-41.417-7.75L15.899,60.5
+          c0,0,3.346,6.938,6.395,11.188c1.5-1.188,2.884-2.177,2.884-2.177l-2.308-6.503c0,0,6.993-1.008,9.06-0.008h0.002
+          c-1.078,5-1.912,10.032-1.678,15.151c5.254,0.013,31.807,0.599,45.029,9.017c4.128-7.508,6.217-19.002,6.217-19.002L94.969,47.441z
+          "></path>
+        <ellipse id="jumper-ellipse" fill="#FFE566" cx="64.958" cy="69.042" rx="8.375" ry="9.458"></ellipse>
+      </g>
+      <g id="boy">
+        <path id="shoes-left" d="M33.25,117.75l5.25,2c0,0,3.515,2.118,1.849,5.368c-2.667-0.833-9.265-3.534-9.265-3.534S30.833,118.833,33.25,117.75z"></path>
+        <path id="shoes-right" d="M61.688,117.457l5.022-0.245c0,0,4.551,0.01,4.109,4.073c-2.689,0.282-9.589,0.408-9.589,0.408
+          S59.955,119.344,61.688,117.457z"></path>
+        <path fill="#FFD0C2" d="M27.687,71.237c-0.088-0.28-0.233-0.525-0.407-0.745c0.231-0.272,0.418-0.659,0.233-0.969
+          c-0.748-1.257-3.073-0.518-3.404-0.335c-1.672,0.922-2.119,2.366-1.702,3.701c0.417,1.334,1.938,2.046,3.395,1.59
+          C27.26,74.022,28.104,72.571,27.687,71.237z"></path>
+        <path fill="#FFD0C2" d="M93.457,40.683c-0.353,0.106-0.663,0.285-0.941,0.5c-0.339-0.294-0.822-0.534-1.213-0.307
+          c-1.588,0.921-0.693,3.85-0.469,4.268c1.134,2.112,2.94,2.693,4.622,2.189c1.68-0.505,2.595-2.403,2.043-4.239
+          C96.947,41.256,95.137,40.177,93.457,40.683z"></path>
+        <path id="rocket-girdle-left" fill="#996666" d="M41.404,51.644c-3.456,0.005-5.738,0.023-5.738,0.023c0.266,0,10.053,9.41-4.932,17.911
+          c-0.497,0.663-0.672,2.563-0.364,3.324c2.59-0.726,11.576-3.771,13.213-12.027C44.679,55.353,42.932,52.823,41.404,51.644z"></path>
+        <path fill="#FFD0C2" d="M81.625,61.188c0,0,20.792-47.688-10.292-56.854c-30.652-9.04-35.625,46.818-35.666,47.322
+          C37.703,51.504,65.75,54,81.625,61.188z"></path>
+        <path fill="#F7941E" d="M35.767,50.679c-0.065,0.593-0.096,0.939-0.099,0.976c2.036-0.151,24.895,2.407,46.409,9.853
+          c0,0,0.074-0.471,0.33-1.102C82.378,60.378,61.063,52.875,35.767,50.679z"></path>
+        <path id="rocket-girdle-right" fill="#996666" d="M82.851,58.077c0,0,7.197,9.965-2.761,16.215C81,62.273,82.851,58.077,82.851,58.077z"></path>
+        <path fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-miterlimit="10" d="M67.594,36.813
+          c0,0,0.781-1.504,2.438-1.223c1.406,0.406,1.292,1.504,1.292,1.504"></path>
+        <path fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-miterlimit="10" d="M76.299,37.546
+          c0,0,0.539-1.622,2.295-0.967c1.272,0.596,1.281,1.796,1.281,1.796"></path>
+        <path fill="#BF9C92" d="M55.75,35.125c-3.728,7.867-12.029,4.738-17.583,1.842c-0.2,0.847-0.386,1.676-0.557,2.48
+          c6.062,2.791,16.227,6.209,20.141-2.049c3.768-7.951,21.727-4.43,30.352-2.211c0.081-0.925,0.137-1.854,0.174-2.783
+          C79.296,30.397,59.585,27.031,55.75,35.125z"></path>
+        <path d="M70.917,40.558c0,0,2.614,1.504,6.038,0.775C76.25,42.583,72.323,44.219,70.917,40.558z"></path>
+        <path fill="#996666" d="M53.799,37.934c-0.574,0.563-1.193,1.004-1.85,1.333C67.13,58.26,80.779,52.309,85.497,49.284
+          c0.327-1.206,0.645-2.471,0.943-3.781C70.222,59.457,56.252,41.405,53.799,37.934z"></path>
+      </g>
+      <g id="helmet">
+        <path id="helmet-main" fill="#5B5553" d="M55.75,35.125c5-10.551,37-1.625,37-1.625s9.065-27.584-19.417-31.833C40.375-3.25,34.833,18.5,33.667,34.5
+          C37.373,36.345,50.722,45.734,55.75,35.125z"></path>
+        <circle id="helmet-circle" fill="#AFAAA9" cx="49.667" cy="33.76" r="2.334"></circle>
+      </g>
+    </g>
+  </g>
+  </svg>
+  </div>
+   <span class="popup-subheader-simple">Parabéns! Você acaba de subir para o nível </span>
+   <span id="level" class="popup-subheader-simple bold yellowMc"></span>
+   <span class="popup-subheader-simple">! Veja suas novas missões e benefícios!</span>
+  <button type="button" class="action action--close infoLevel" onclick="location.href = 'skilltree.html'">
+    <i class="fa fa-times"></i>
+  </button>
+      </header>
+      <footer class="text_center">
+        <button type="submit" onclick="location.href = 'skilltree.html'" class="button-charge infoLevel">Ver Missões</button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<!--MENU INFERIOR-->
+<div class="navbar secondary-background-color-app">
+  <a href="voucher.html" class="fa fa-home menu-icon"></a>
+  <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+  <a href="products.html" class="fa fa-shopping-cart menu-icon"></a>
+  <a href="service.html" class="fas fa-question menu-icon"></a>
+  <a href="profile.html" class="fas fa-user menu-icon"></a>
+</div>
+
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../scripts/environment.js"></script>
+
+<script type="text/javascript" src="../scripts/productPopup.js", this.id></script>
+<script type="text/javascript" src="../scripts/apis.js"></script>
+<script type="text/javascript" src="../scripts/register.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+  /*ATUALIZA AS MEDALHAS*/
+  //Insere os IDs das medalhas do arquivo environment.js no HTML
+  inputID("mission_adj");
+
+  //Varre o HTML e esconde ou brilha as medalhas corretas
+  $.each($(".mission_adj"), function(index, value){
+    getMember().then(function(res){
+      if(eval("res."+value.id) == 1){
+        value.classList.remove("color_disabled");
+        value.style.color = "#5C5346";
+      }
+    })
+  })
+
+  /*PASSOU DE NÍVEL*/
+  getMember().then(function(res){
+    if(res.TierName == "Prata"){
+      if(localStorage.getItem('LevelPopUp') != '1'){
+        document.getElementById('informationPopup').style.display='block';
+      }
+      $('.paodeacucar').parents().parents()[0].classList.remove('hide')
+    }
+    if(res.TierName == "Lover"){
+      $("#tier2").attr("disabled", false);
+      $("#tier3").attr("disabled", false);
+      if(localStorage.getItem('LevelPopUp') != '1'){document.getElementById('informationPopup').style.display='block';}
+    }
+  })
+
+  /*DESCONTOS SECRETOS*/
+  $.each($(".mission_adj"), function(index,value){
+      if(jQuery.inArray("secret", value.classList)>0){
+    jQuery(value).parent().children()[1].classList.add("hide");
+      }
+      if(jQuery.inArray("color_disabled", value.classList)==-1){
+        console.log("rtes")
+    jQuery(value).parent().children()[1].style.color = "#5C5346";
+      }
+  })
+
+  $(".infoLevel").click(function(){localStorage.setItem('LevelPopUp', '1')});
+</script>
+
+
+</body>
+</html>
+
+

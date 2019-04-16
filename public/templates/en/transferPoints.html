@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
+  <link rel="stylesheet" type="text/css" href="../styles/creditcard/styles.css">
+  <link rel="stylesheet" type="text/css" href="../styles/creditcard/demo.css">
+  <link rel="stylesheet" type="text/css" href="../styles/loader.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+</head>
+
+
+<style type="text/css">
+  body {
+      position: relative;
+      background: #0000007a;
+      background-blend-mode: color;
+      background-size: cover;
+      background-position-x: 50%;
+      background-image: url(https://images.unsplash.com/photo-1521623475836-87d82a22184f?ixlib=rb-0.3.5…jEyMDd9&s=06e7c41…&auto=format&fit=crop&w=802&q=80);
+  }
+
+</style>
+
+<body style="min-height: 250px !important">
+
+  <!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <img src="../images/logo.png" class="logo2">
+    <div class="loader hide">
+      <div class="loader__ball hide"></div>
+    </div>
+  </header>
+  <div class="text_center">
+  <h2 class="title_prepaid">Transfira Pontos!</h2>
+  </div>
+    <div class="prepaid_title">
+      <h2 class="popup-subheader-simple">Você sabia que você pode transferir pontos para seu amigo <span style="color: #ffd833;font-weight: bold;" class="friendName"></span>?</h2>
+      <h2 class="popup-subheader-simple">Escolha abaixo qual o valor que deseja transferir e ajude-o a resgatar benefícios!</h2>
+    </div>
+    <div class="slider">
+      <input class = "slider" type="range" min="1" max="100" step="1" oninput="myFunction(this.value)">
+      <p class="slider_value" id="demo">10</p>                                                 
+    </div>
+    <footer class="text_center">
+      <button type="submit" class="button-charge">Transfira Pontos</button>
+    </footer>
+
+
+  <!--MENU INFERIOR-->
+  <div class="navbar secondary-background-color-app">
+    <a href="voucher.html" class="fa fa-home menu-icon"></a>
+    <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+    <a href="gift.html" class="fa fa-gift menu-icon"></a>
+    <a href="survey.html" class="fas fa-clipboard-list menu-icon"></a>
+    <a href="profile.html" class="fas fa-user menu-icon"></a>
+  </div>
+    
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../scripts/apis.js"></script>
+<script src="../scripts/environment.js"></script>
+<script>
+function myFunction(val) {
+    document.getElementById("demo").innerHTML = val; 
+}
+
+$(".button-charge").click(function(){
+  showLoading();
+    getMemberReferrals().then(function(res){
+      transferPoints(memberNumber, res.items[0].MemNumber, $('#demo').text()).then(function(res2){
+        location.href = 'voucher.html';
+      });
+    })
+})
+
+</script>
+
+<script type="text/javascript">
+  getMemberReferrals().then(function(res){$('.friendName').html(res.items[0].Name)})
+  localStorage.setItem('PushTransferPoints', '0');
+</script>
+
+</body>
+</html>
+
+

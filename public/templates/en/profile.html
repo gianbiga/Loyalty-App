@@ -1,0 +1,205 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../styles/creditcard/styles.css">
+  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
+  <link rel="stylesheet" type="text/css" href="../styles/loader.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+</head>
+
+
+<style type="text/css">
+  body {
+    position: relative;
+    background: white;
+}
+
+</style>
+
+<body style="min-height: 250px !important">
+
+  <!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app">
+    <img src="../images/logo.png" class="logo2">
+    <a href="configuration.html" class="fas fa-cogs fa-2x cart secondary-color-app"></a>
+    <div class="loader hide">
+      <div class="loader__ball hide"></div>
+    </div>
+  </header>
+
+  <div class="photo">
+    <div class="picture" src="../images/denis.png">
+      <img class="picture_add" src="../images/profile/plus.png">
+    </div>
+    <h2 class="h2_black_background">-</h2>
+    <span id="memberNumberprofile" class="h3_black_background">-</span>
+    <span class="h3_black_background">|</span>
+    <span id="totalMcPoints" class="h3_black_background">...</span>
+    <span class="h3_black_background no_bold">Pontos</span>
+<!--      -->
+<!--     <span id="totalMoney" class="h3_black_background">...</span>
+    <span class="h3_black_background no_bold">Money</span> -->
+
+  </div>
+
+
+  <div class="profile_achivements hide">
+    <div class="circle achivements">
+      <i class="center fas fa-star"></i>
+      <p class="h4_black_background no_bold">Nivel</p>
+    </div>
+    <div class="circle achivements">
+      <i class="center fas fa-shopping-cart"></i>
+      <p class="h4_black_background no_bold">Compras</p>
+    </div>
+    <div class="circle achivements">
+      <i class="center fas fa-star"><p class="h4_black_background no_bold">Pesquisas</p></i>
+      
+    </div>
+    <div class="circle achivements">
+      <i class="center fas fa-star"><p class="h4_black_background no_bold">Missões</p></i>
+      
+    </div>
+  </div>
+
+<div class="balance-container">
+    <div class="balance-profile hide">
+      <div class="balance-column-left">
+          <img class="balance-profile_image" src="../images/logo.png">
+      </div>
+      <div class="balance-column-middle">
+        <p class="balance-profile_title"></p>
+        <p class="balance-profile_text">Recarregue o cartão e ganhe 15% de deconto na sua próxima compra!</p>
+      </div>
+      <div class="balance-column-right">
+        <p class="balance-profile_time">23:37</p>
+      </div>
+    </div>
+</div>
+
+<!--MENU INFERIOR-->
+<div class="navbar secondary-background-color-app">
+  <a href="voucher.html" class="fa fa-home menu-icon"></a>
+  <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+  <a href="products.html" class="fa fa-shopping-cart menu-icon"></a>
+  <a href="service.html" class="fas fa-question menu-icon"></a>
+  <a href="profile.html" class="fas fa-user menu-icon"></a>
+</div>
+
+    
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../scripts/apis.js"></script>
+<script src="../scripts/environment.js"></script>
+<script>
+function myFunction(val) {
+    document.getElementById("demo").innerHTML = val; 
+}
+
+$(".button-charge").click(function(){
+  showLoading();
+  createTransaction("Acumulação", "Crédito Manual", memberNumber, "Money", document.getElementById("demo").innerHTML, "");
+  setTimeout(function(){
+    hideshowByClass("paymentLoading","show");
+  },500)
+  setTimeout(function(){
+   // location.href='qrcode.html';
+  },5000)
+})
+
+//Pega Dados do Usuário
+getMemberPoints().then(function(res){$(".h2_black_background").html(res.MemberName);})
+getMemberPoints().then(function(res){$("#totalMcPoints").html(res.LftmPointTypeAVal);})
+getMemberPoints().then(function(res){$("#totalMoney").html(res.LftmPointTypeBVal);})
+getMemberPoints().then(function(res){$("#memberNumberprofile").html(res.MemberNumber);})
+
+</script>
+
+<script type="text/javascript">
+
+getTransaction(memberNumber).then(function(res){
+var tituloTxn;
+var descricaoTxn;
+var imageTxn;
+  $.each(res.items, function(index,value){
+
+    var template = document.getElementsByClassName("balance-profile")[0];
+    var container = document.getElementsByClassName("balance-container")[0];
+    var row = template.cloneNode(true);
+
+    if(value.SubTypeCode == 'ORA_RED_PROD' && value.TypeCode == 'ORA_TXN_RED'){
+
+      if(value.ProcessingLog.search('Redeemed Points') != null){
+        tituloTxn = 'Gasto de ' + value.ProcessingLog.substring(value.ProcessingLog.search('Redeemed Points') + 17, value.ProcessingLog.search('Pontos')+6);
+      }
+      else{
+        tituloTxn = 'Outros Gastos'
+      }
+      
+      descricaoTxn = 'Resgate de ' + value.ProductNumber;
+      imageTxn = '../images/resgate.png'
+    }
+
+    if(value.SubTypeCode == 'ORA_ACC_MCR' && value.TypeCode == 'ORA_TXN_ACC'){
+
+      if(value.ProcessingLog.search('Assigned Points') != null /*&& value.ProcessingLog.search('Tier') == -1*/){
+      tituloTxn = 'Acumulo de ' + value.ProcessingLog.substring(value.ProcessingLog.search('Assigned Points') + 17, value.ProcessingLog.search('Pontos')+6);
+      descricaoTxn = value.Comments;
+      }
+/*      else if(value.ProcessingLog.search('Tier') > 0){
+        tituloTxn = 'Mudança de Nivel';
+        descricaoTxn = 'Você ganhou pontos suficientes e mudou de nível!'
+      }*/
+      else{
+        tituloTxn = 'Outros Gastos'
+        descricaoTxn = value.Comments;
+      }
+     
+      
+      imageTxn = '../images/acumulo.png'
+    }
+
+    row.querySelectorAll(".balance-profile_title")[0].innerHTML = tituloTxn;
+    row.querySelectorAll(".balance-profile_text")[0].innerHTML = descricaoTxn;
+    row.querySelectorAll(".balance-profile_time")[0].innerHTML = value.ProcessDt.substring(0,value.ProcessDt.search('T'));
+    row.querySelectorAll(".balance-profile_image")[0].src = imageTxn;
+
+
+/*    row.querySelectorAll(".voucher-title")[0].innerHTML = value.displayName;
+    row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = "url('https://ucf4-occ0077-occ.oracledemos.com/"+value.mediumImageURLs[1]+"')";
+    row.querySelectorAll(".card--small--vouchers")[0].id = value.id;
+    row.querySelectorAll(".voucher-price")[0].innerHTML = value.listPrice + "<span> BITZ</span>"; */
+    container.appendChild(row);
+    row.setAttribute("class","balance-profile");
+  })
+
+})
+
+/*$.each(getProductsJSON.items, function(index,value){
+  var template = document.getElementById("voucherTemplate");
+  var container = document.getElementById("voucherContainer");
+  var row = template.cloneNode(true);
+  row.querySelectorAll(".voucher-title")[0].innerHTML = value.displayName;
+  row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = "url('https://ucf4-occ0077-occ.oracledemos.com/"+value.mediumImageURLs[1]+"')";
+  row.querySelectorAll(".card--small--vouchers")[0].id = value.id;
+  row.querySelectorAll(".voucher-price")[0].innerHTML = value.listPrice + "<span> BITZ</span>"; 
+  container.appendChild(row);
+  row.setAttribute("class","w3-cell-row");
+})
+*/
+</script>
+
+</body>
+</html>
+
+

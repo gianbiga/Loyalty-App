@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blueprint: A responsive product grid layout with touch-friendly Flickity galleries and Isotope-powered filter functionality." />
+  <meta name="keywords" content="blueprint, template, layout, grid, responsive, products, store, filter, isotope, flickity" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../styles/skilltree.css">
+  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
+  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../styles/cards.css">
+  
+</head>
+<body style="height: auto; overflow: scroll;">
+
+<!--HEADER-->
+  <header class="w3-top w3-bar w3-theme main-background-color-app" style="position: fixed !important;">
+    <img src="../images/logo.png" class="logo2">
+    <a href="MyVouchers.html" class="fas fa-ticket-alt fa-3x cart secondary-color-app" style="transform: rotate(-40deg);"></a>
+  </header>
+
+<p class="tiers"><span>MEUS VOUCHERS</span>
+
+
+<div id="voucherContainer" class="voucher-container extrato" style="top: 139px !important; margin-bottom: 80px;">
+  <div id="voucherTemplate" class="w3-cell-row hide">
+    <div class="card card--small--vouchers">
+      <div class="location-row">
+        <div class="location-column">
+          <h2 class="voucher-title">Crédito de R$100,00 em compras na Etna</h2>
+          <p class="voucher-description hide">Para ativar esse desconto, clique no botão abaixo.</p>
+          <h3 class="voucher-status">20<span>%</span></h3>
+          <h3 class="voucher-select" onclick="
+            voucherInformationPopup(
+              $(this).parents().parents().parents()[0].id);
+          ">VER CÓDIGO</h3>
+        </div>
+      </div>
+    </div>  
+  </div>
+</p>
+
+<!-- <div class="tiers"><span>USADOS</span></div> -->
+
+<!-- VOUCHER SUCCESS POPUP -->
+  <div id="popupVoucherSuccess" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="modal-voucher-header"> 
+        <span onclick="document.getElementById('popupVoucherSuccess').style.display='none'" 
+        class="w3-button w3-display-topright popup-voucher-close">&times;</span>
+        <h1 id="prod-header" class="popup-voucher-header"></h1>
+      </header>
+      <div class="modal-voucher-middle">
+        <img id="prod-img" src="https://images.unsplash.com/photo-1511344506912-a2a2d4916354?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=92498ef1b05f6d75d1b6463d70151ff7&auto=format&fit=crop&w=750&q=80" class="popup-voucher-product">
+        <h2 id="prod-title" class="popup-voucher-title"></h2>
+        <p id="prod-desc" class="popup-product-desc"></p>
+      </div>
+      <footer class="modal-voucher-footer">
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+<!--MENU INFERIOR-->
+<div class="navbar secondary-background-color-app">
+  <a href="voucher.html" class="fa fa-home menu-icon"></a>
+  <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+  <a href="products.html" class="fa fa-shopping-cart menu-icon"></a>
+  <a href="service.html" class="fas fa-question menu-icon"></a>
+  <a href="profile.html" class="fas fa-user menu-icon"></a>
+</div>
+
+
+<script type="text/javascript" src="../scripts/apis.js"></script>
+<script type="text/javascript" src="../scripts/environment.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../scripts/productPopup.js", this.id></script>
+<script type="text/javascript">
+  getMemberVouchersInfo().then(function(res){
+    $.each(res.items, function(index,value){
+      var template = document.getElementById("voucherTemplate");
+      var container = document.getElementById("voucherContainer");
+      var row = template.cloneNode(true);
+      row.querySelectorAll(".voucher-title")[0].innerHTML = value.VoucherType;
+      row.querySelectorAll(".card--small--vouchers")[0].id = value.LoyMemVchrId;
+
+      getOCCProductsFromCollection(productCollection).then(function(res2) {
+          $.each(res2.items, function(index2,valueOCC){
+            if(valueOCC.displayName == value.VoucherType){row.querySelectorAll(".card--small--vouchers")[0].style.backgroundImage = 
+              "url('https://ucf4-occ0040-occ.oracledemos.com"+valueOCC.primaryMediumImageURL+"')";}
+          })
+        })
+
+      row.querySelectorAll(".voucher-status")[0].innerHTML =value.voucherStatus; 
+      container.appendChild(row);
+      row.setAttribute("class","w3-cell-row");
+    })
+})
+
+</script>
+
+</body>
+
+
+</html>
+
+

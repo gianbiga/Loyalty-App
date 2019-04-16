@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Blueprint: A basic responsive product grid layout with comparison functionality" />
+		<meta name="keywords" content="blueprint, template, html, css, javascript, grid, layout, effect, product comparison" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ 		 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../styles/productcomparison/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/productcomparison/component.css" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+		<link rel="stylesheet" type="text/css" href="../styles/loader.css">
+		<link rel="stylesheet" type="text/css" href="../styles/colors.css">
+		<!-- Modernizr is used for flexbox fallback -->
+		<script src="../scripts/productcomparison/modernizr.custom.js"></script>
+	</head>
+	<body>
+
+		<!--HEADER-->
+		<header class="w3-top w3-bar w3-theme main-background-color-app">
+		<img src="../images/logo.png" class="logo2">
+		<div class="loader hide">
+			<div class="loader__ball hide"></div>
+		</div>
+		</header>
+
+		<!-- Compare basket -->
+		<div class="compare-basket">
+			<button class="action action--button action--compare">
+				<i class="fa fa-shopping-cart"></i>
+				<span class="action__text">Checkout</span>
+			</button>
+		</div>
+		<!-- Main view -->
+		<div class="view">
+			<!-- Product grid -->
+			<section class="grid">
+
+				<!-- MAIN PRODUCTS -->
+				<div class="product product1">
+					<div class="product__info">
+						<h3 class="product__title">Ração Premier</h3>
+						<img class="product__image" src="../images/products/racaoPremier.png" alt="Product 1" />
+						<span class="product__price highlight">R$104.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click(); show1ndOptions();">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text ">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-shopping-cart"></i>
+						<i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+				<div class="product product2">
+					<div class="product__info">
+						<h3 class="product__title">Kit Premier</h3>
+						<img class="product__image" src="../images/products/kitPremier.png" alt="Product 2" />
+						<span class="product__price highlight">R$154.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click(); show2ndOptions();">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-plus"></i><i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+
+				<!-- ADDITIONAL PRODUCTS FOR MAIN PRODUCT 1 -->
+				<div class="product add_product add_product1 hide">
+					<div class="product__info">
+						<h3 class="product__title">Osso Petiscão 1 Un</h3>
+						<img class="product__image product__image__add" src="../images/products/osso1.png" alt="Product 1" />
+						<span class="product__price highlight">R$8.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click()">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text ">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-shopping-cart"></i>
+						<i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+				<div class="product add_product add_product1 hide">
+					<div class="product__info">
+						<h3 class="product__title">Osso Petiscão 1kg</h3>
+						<img class="product__image product__image__add" src="../images/products/osso2.png" alt="Product 2" />
+						<span class="product__price highlight">R$33.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click()">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-plus"></i><i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+
+				<!-- ADDITIONAL PRODUCTS FOR MAIN PRODUCT 2 -->
+				<div class="product add_product add_product2 hide">
+					<div class="product__info">
+						<h3 class="product__title">Osso Petiscão 1 Un</h3>
+						<img class="product__image product__image__add" src="../images/products/osso1.png" alt="Product 1" />
+						<span class="product__price highlight">R$8.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click()">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text ">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-shopping-cart"></i>
+						<i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+				<div class="product add_product add_product2 hide">
+					<div class="product__info">
+						<h3 class="product__title">Osso Petiscão 1kg</h3>
+						<img class="product__image product__image__add" src="../images/products/osso2.png" alt="Product 2" />
+						<span class="product__price highlight">R$33.90</span>
+						<button class="action action--button action--buy" onclick="this.parentElement.parentElement.getElementsByClassName('action--compare-add')[0].click()">
+							<i class="fa fa-shopping-cart"></i>
+							<span class="action__text">Add to cart</span>
+						</button>
+					</div>
+					<label class="action action--compare-add hide">
+						<input class="check-hidden" type="checkbox" />
+						<i class="fa fa-plus"></i><i class="fa fa-check"></i>
+						<span class="action__text action__text--invisible">Add to compare</span>
+					</label>
+				</div>
+					<label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+			</section>
+		</div><!-- /view -->
+		<!-- product compare wrapper -->
+		<section class="compare">
+			<h2 class="title_checkout">Selecione um meio de pagamento</h2>
+			<div class="payment_methods">
+				<div class="payment_option option__points">
+					<img class="option__points" src="../images/creditcard/optionLoyalty.png" />
+					<h3 class="payment_option_title">McWallet</h3>
+				</div>
+				<div class="payment_option">
+					<img class="option__creditcard" src="../images/creditcard/optionCreditCard.png" />
+					<h3 class="payment_option_title">Cartao de Credito</h3>
+				</div>
+			</div>
+			<div class="payment_methods">
+				<div class="payment_option">
+					<img class="option__creditcard" src="../images/creditcard/optionApplePay.png" />
+					<h3 class="payment_option_title">Pagamento pelo Celular</h3>
+				</div>
+				<div class="payment_option option__points">
+					<img class="option__points" src="../images/creditcard/optionMoney.png" />
+					<h3 class="payment_option_title">Dinheiro</h3>
+				</div>
+			</div>
+			<button class="confirm_checkout hide">
+				Confirmar Pagamento
+			</button>
+			<button class="action action--close"">
+				<i class="fa fa-remove"></i>
+				<span class="action__text action__text--invisible">Close comparison overlay</span>
+			</button>
+		</section>
+		<div>
+			<div class="paymentLoading hide">Confirmando Pagamento...</div>
+		</div>
+
+		<div>
+			<img onclick="this.style.display='none';" class="monthEmployee" src="../images/employeemonth.png">
+		</div>
+
+		<!--MENU INFERIOR-->
+		<div class="navbar secondary-background-color-app">
+		  <a href="voucher.html" class="fa fa-home menu-icon"></a>
+		  <a href="skilltree.html" class="fa fa-trophy menu-icon"></a>
+		  <a href="#order" class="fa fa-utensils menu-icon"></a>
+		  <a href="survey.html" class="fas fa-clipboard-list menu-icon"></a>
+		  <a href="profile.html" class="fas fa-user menu-icon"></a>
+		</div>
+
+		<script src="../scripts/productcomparison/classie.js"></script>
+		<script src="../scripts/productcomparison/main.js"></script>
+		<script type="text/javascript" src="../scripts/apis.js"></script>
+		<script type="text/javascript" src="../scripts/environment.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			function show1ndOptions(){
+				$(".add_product1").each(function(index,value){value.classList.remove("hide");})
+			}
+			function show2ndOptions(){
+				$(".add_product2").each(function(index,value){value.classList.remove("hide");})
+			}
+			function hideAll(){
+				$(".add_product1").each(function(index,value){value.classList.add("hide");})
+				$(".add_product2").each(function(index,value){value.classList.add("hide");})
+			}
+
+			$(".payment_option").click(function(){
+				hideshowByClass("confirm_checkout","show");
+				$(".payment_option").each(function(index,value){value.classList.remove("payment_selected");})
+				this.classList.add("payment_selected");
+			})
+
+			$(".confirm_checkout").click(function(){
+				showLoading();
+				createTransaction("Acumulação", "Crédito Manual", memberNumber, pointType, "0", "Pickup Store Realizado");
+				setTimeout(function(){
+					hideshowByClass("paymentLoading","show");
+				},500)
+				setTimeout(function(){
+					location.href='qrcode.html';
+				},5000)
+
+
+			})
+
+		</script>
+	</body>
+</html>
