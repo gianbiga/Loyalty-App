@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../styles/mobile.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/mobile.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../styles/colors.css">
-  <link rel="stylesheet" type="text/css" href="../styles/creditcard/styles.css">
-  <link rel="stylesheet" type="text/css" href="../styles/environment.css">
-  <link rel="stylesheet" type="text/css" href="../styles/loader.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/colors.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/creditcard/styles.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/environment.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/loader.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   
 </head>
@@ -29,7 +29,7 @@
 
   <!--HEADER-->
   <header class="w3-top w3-bar w3-theme main-background-color-app">
-    <img src="../images/logo.png" class="logo2">
+    <img src="../../images/logo.png" class="logo2">
     <a href="configuration.html" class="fas fa-cogs fa-2x cart secondary-color-app"></a>
     <div class="loader hide">
       <div class="loader__ball hide"></div>
@@ -37,8 +37,8 @@
   </header>
 
   <div class="photo">
-    <div class="picture" src="../images/denis.png">
-      <img class="picture_add" src="../images/profile/plus.png">
+    <div class="picture" src="../../images/denis.png">
+      <img class="picture_add" src="../../images/profile/plus.png">
     </div>
     <h2 class="h2_black_background">-</h2>
     <span id="memberNumberprofile" class="h3_black_background">-</span>
@@ -74,7 +74,7 @@
 <div class="balance-container">
     <div class="balance-profile hide">
       <div class="balance-column-left">
-          <img class="balance-profile_image" src="../images/logo.png">
+          <img class="balance-profile_image" src="../../images/logo.png">
       </div>
       <div class="balance-column-middle">
         <p class="balance-profile_title"></p>
@@ -99,8 +99,8 @@
 <!-- JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="../scripts/apis.js"></script>
-<script src="../scripts/environment.js"></script>
+<script src="../../scripts/apis.js"></script>
+<script src="../../scripts/environment.js"></script>
 <script>
 function myFunction(val) {
     document.getElementById("demo").innerHTML = val; 
@@ -147,7 +147,7 @@ var imageTxn;
       }
       
       descricaoTxn = 'Resgate de ' + value.ProductNumber;
-      imageTxn = '../images/resgate.png'
+      imageTxn = '../../images/resgate.png'
     }
 
     if(value.SubTypeCode == 'ORA_ACC_MCR' && value.TypeCode == 'ORA_TXN_ACC'){
@@ -166,7 +166,7 @@ var imageTxn;
       }
      
       
-      imageTxn = '../images/acumulo.png'
+      imageTxn = '../../images/acumulo.png'
     }
 
     row.querySelectorAll(".balance-profile_title")[0].innerHTML = tituloTxn;
