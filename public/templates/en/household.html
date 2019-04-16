@@ -75,11 +75,11 @@ body {
 							<span><label for="q3">What type of relationship do you have with him/her?</label></span>
 							<input id="q3" name="q3" list="parentesco"/>
 								<datalist id="parentesco" class="lista">
-								<option value="Conjuge">
-								<option value="Amigo">
-								<option value="Irmão/Irmã">
-								<option value="Pai/Mãe/Avós">
-								<option value="Outros">
+								<option value="Partner">
+								<option value="Friend">
+								<option value="Brother/Sister">
+								<option value="Parents">
+								<option value="Other">
 								</datalist>
 							</input>
 						</li>
@@ -95,8 +95,8 @@ body {
 							<span><label for="q6">So you accept sharing points with this person?</label></span>
 							<input id="q6" name="q6" list="sharePointsYN"/>
 								<datalist id="sharePointsYN" class="lista">
-								<option value="Sim">
-								<option value="Não">
+								<option value="Yes">
+								<option value="No">
 								</datalist>
 						</li>
 					</ol><!-- /questions -->
@@ -165,7 +165,7 @@ body {
 												// hide form
 												classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
 												var messageEl = theForm.querySelector( '.final-message' );
-												messageEl.innerHTML = 'Obrigado! Seu grupo foi adicionado com sucesso!';
+												messageEl.innerHTML = 'Thank you! Your household was added with success!';
 												classie.addClass( messageEl, 'show' );
 										})
 									})
