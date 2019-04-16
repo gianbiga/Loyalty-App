@@ -24,7 +24,7 @@ module.exports = function (app) {
 	  callback(null, corsOptions) // callback expects two parameters: error and options
 	}
 
-	app.use(cors(corsOptions));
+	app.use(cors(corsOptionsDelegate));
 
 	//Create Base Path for Loyalty Calls
 	var loyaltyInstance = axios.create({
