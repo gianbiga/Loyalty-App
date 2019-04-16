@@ -13,12 +13,18 @@ module.exports = function (app) {
 	app.use(bodyParser.urlencoded({ extended: true }));
 
 
-	var corsOptions = {
-	  origin: 'https://oracoalitiongb.netlify.com',
-	  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+	var whitelist = ['https://coalitionappgb.herokuapp.com', 'https://oracoalitiongb.netlify.com'];
+	var corsOptionsDelegate = function (req, callback) {
+	  var corsOptions;
+	  if (whitelist.indexOf(req.header('Origin')) !== -1) {
+	    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+	  } else {
+	    corsOptions = { origin: false } // disable CORS for this request
+	  }
+	  callback(null, corsOptions) // callback expects two parameters: error and options
 	}
 
-	app.use(cors(corsOptions));
+	app.use(cors(corsOptionsDelegate));
 
 	//Create Base Path for Loyalty Calls
 	var loyaltyInstance = axios.create({
