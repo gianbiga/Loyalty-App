@@ -13,7 +13,7 @@ module.exports = function (app) {
 	app.use(bodyParser.urlencoded({ extended: true }));
 
 
-	var whitelist = ['https://coalitionappgb.herokuapap.com', 'http://example2.com']
+	var whitelist = ['https://coalitionappgb.herokuapp.com', 'http://example2.com']
 	var corsOptions = {
 	  origin: function (origin, callback) {
 	    if (whitelist.indexOf(origin) !== -1) {
