@@ -290,7 +290,7 @@ function productPopup(product, id){
 		header = "Designer";
 		title = "How To Use It";
 		image = "../../images/badges/furniture.jpg"
-		description = "Você gosta de decorar a sua casa?<br><br> Confira nossos vouchers especiais que vão te ajudar a ter uma casa mais bonita! <br><br>lém disso, resgatando 3 vouchers de decoração você ganha pontos!";
+		description = "Would you like to decorate your home? <br> <br> Check out our special vouchers that will help you have a more beautiful home! Also, by redeeming 3 decoration vouchers you get points!";
 		buttonFlag = 0;
 		buttonLink = "";
 		break;
@@ -299,7 +299,7 @@ function productPopup(product, id){
 		header = "Popular";
 		title = "How To Use It";
 		image = "../../images/badges/secret.jpg"
-		description = "Você já utilizou os descontos desse nível! <br><br>Avance para as próximas etapas e conquiste outros benefícios!";
+		description = "You have already used the discounts of this level! <br> <br> Advance to the next steps and gain other benefits!";
 		buttonFlag = 0;
 		buttonLink = "";
 		break;
@@ -318,7 +318,7 @@ function productPopup(product, id){
 		header = "Lover";
 		title = "How To Use It";
 		image = "../../images/badges/GPALover.jpg"
-		description = "Você compra muitos produtos da Havaianas? <br>Então você pode ser considerado um Havaianas Lover. <br><br>Comprando apenas 1 produto do Havaianas, você ganha essa medalha e alguns pontos para resgatar em benefícios!";
+		description = "Do you buy many Havaianas products? So you can be considered a Havaianas Lover. <br> <br> Buying only 1 Havaianas product, you get this medal and some points to redeem in benefits!";
 		buttonFlag = 0;
 		buttonLink = "products.html";
 		break;

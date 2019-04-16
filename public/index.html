@@ -53,6 +53,13 @@ body {
   </header>
 
   	<div class="limiter">
+
+  		<!-- Language -->
+		 <select id="demo-htmlselect">
+	        <option value="BR" selected="selected" data-imagesrc="images/languages/brazil.png"></option>
+	        <option value="US" data-imagesrc="images/languages/us.png"></option>
+	    </select>
+
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form class="login100-form validate-form">
@@ -110,7 +117,7 @@ body {
 							Not a member?
 						</span>
 
-						<a class="txt2 bo1 hov1 secondary-color-app .border-bottom-color" font-weight: bold;" href="templates/register.html">
+						<a class="txt2 bo1 hov1 secondary-color-app .border-bottom-color" font-weight: bold;" onclick="languageChange($('#demo-htmlselect').data('ddslick').selectedData.value)">
 							Sign up now							
 						</a>
 					</div>
@@ -125,6 +132,25 @@ body {
 <script src="scripts/apis.js"></script>
 <script src="scripts/environment.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="scripts/flag.js"></script>
+
+<!-- Language -->
+<script type="text/javascript">
+	$('#demo-htmlselect').ddslick();
+	function languageChange(languageSelected){
+
+		switch(languageSelected){
+			case 'BR':
+				window.location.href = 'templates/register.html'
+			break;
+
+			case 'US':
+				window.location.href = 'templates/en/register.html'
+			break;
+		}
+	}
+
+</script>
 
 
 </body>

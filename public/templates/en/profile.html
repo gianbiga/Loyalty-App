@@ -146,14 +146,14 @@ var imageTxn;
         tituloTxn = 'Outros Gastos'
       }
       
-      descricaoTxn = 'Resgate de ' + value.ProductNumber;
+      descricaoTxn = 'Redemption of ' + value.ProductNumber;
       imageTxn = '../../images/resgate.png'
     }
 
     if(value.SubTypeCode == 'ORA_ACC_MCR' && value.TypeCode == 'ORA_TXN_ACC'){
 
       if(value.ProcessingLog.search('Assigned Points') != null /*&& value.ProcessingLog.search('Tier') == -1*/){
-      tituloTxn = 'Acumulo de ' + value.ProcessingLog.substring(value.ProcessingLog.search('Assigned Points') + 17, value.ProcessingLog.search('Pontos')+6);
+      tituloTxn = 'Accrual of ' + value.ProcessingLog.substring(value.ProcessingLog.search('Assigned Points') + 17, value.ProcessingLog.search('Pontos')+6);
       descricaoTxn = value.Comments;
       }
 /*      else if(value.ProcessingLog.search('Tier') > 0){
@@ -161,7 +161,7 @@ var imageTxn;
         descricaoTxn = 'Você ganhou pontos suficientes e mudou de nível!'
       }*/
       else{
-        tituloTxn = 'Outros Gastos'
+        tituloTxn = 'Other Expenses'
         descricaoTxn = value.Comments;
       }
      
