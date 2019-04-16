@@ -226,6 +226,132 @@ function productPopup(product, id){
 		buttonLink = "";
 		break;
 
+
+		//**ENGLISH**//
+
+		/*MISSÕES*/
+
+		case 'firststeps_en':
+		header = "First Steps";
+		title = "How To Use It";
+		image = "../../images/badges/firstSteps.jpg"
+		description = "You win this medal when you redeem your first voucher! <br> <br> It is an incentive for you to continue with us =)";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'invitefriend_en':
+		header = "Invite a Friend";
+		title = "How To Use It";
+		image = "../../images/badges/friendRef.jpg"
+		description = "Invite a friend to the program and earn points! <br> <br> To invite your friend, click the button below and share the link through whatsapp or facebook. <br> <br> Once your friend registers, you will complete this quest and earn points! ";
+		buttonFlag = 0;
+		buttonLink = "invite.html";
+		break;
+
+		case 'collaboration_en':
+		header = "Collaboration";
+		title = "How To Use It";
+		image = "../../images/badges/socialMedia.png"
+		description = "Do you like our services? <br> So how about giving a like on our social networks? <br> <br> Enjoy our Facebook page or Instagram and earn points!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+
+		case 'congrats_en':
+		header = "Congrats!"
+		title = "How To Use It";
+		image = "../../images/badges/birthday.jpg"
+		description = "Is it your birthday? <br> <br> We have a gift for you! <br> <br> If you redeem any product in the month of your birthday, we will give you 10 points to spend on more benefits!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'different_en':
+		header = "Different";
+		title = "How To Use It";
+		image = "../../images/badges/secret.jpg"
+		description = "You have already used the discounts of this level! <br> <br> Advance to the next steps and gain other benefits!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'family_en':
+		header = "Family";
+		title = "How To Use It";
+		image = "../../images/badges/family.jpg"
+		description = "Did you know that you can invite people from your family to share the benefits of the program? <br> <br> Click the button below and invite a family member to join points and benefits!";
+		buttonFlag = 0;
+		buttonLink = "household.html";
+		break;
+
+		case 'furniture_en':
+		header = "Designer";
+		title = "How To Use It";
+		image = "../../images/badges/furniture.jpg"
+		description = "Você gosta de decorar a sua casa?<br><br> Confira nossos vouchers especiais que vão te ajudar a ter uma casa mais bonita! <br><br>lém disso, resgatando 3 vouchers de decoração você ganha pontos!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'popular_en':
+		header = "Popular";
+		title = "How To Use It";
+		image = "../../images/badges/secret.jpg"
+		description = "Você já utilizou os descontos desse nível! <br><br>Avance para as próximas etapas e conquiste outros benefícios!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+
+		case 'hiker_en':
+		header = "Explorer";
+		title = "How To Use It";
+		image = "../../images/badges/hiker.jpg"
+		description = "Visit over 10 different stores to win this medal, plus a special gift from us! <br> <br> To deactivate, just make a purchase of any product in 10 different stores! Good luck!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'gpalover_en':
+		header = "Lover";
+		title = "How To Use It";
+		image = "../../images/badges/GPALover.jpg"
+		description = "Você compra muitos produtos da Havaianas? <br>Então você pode ser considerado um Havaianas Lover. <br><br>Comprando apenas 1 produto do Havaianas, você ganha essa medalha e alguns pontos para resgatar em benefícios!";
+		buttonFlag = 0;
+		buttonLink = "products.html";
+		break;
+
+		case 'giver_en':
+		header = "Giver";
+		title = "How To Use It";
+		image = "../../images/badges/giver.jpg"
+		description = "Do you have a friend who just started in the program? <br> <br> Or you're almost getting points to redeem a product? <br> <br> Did you know you can donate some of your points to it? Click on the button below and donate!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'service_en':
+		header = "Service";
+		title = "How To Use It";
+		image = "../../images/badges/service.jpg"
+		description = "Are you in doubt about any of our services? <br> <br> Just click on the attendance icon in the bottom menu of the application and look for your answers. <br> <br> If you evaluate our service at least once, you earn points!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+		case 'expert_en':
+		header = "Expert";
+		title = "How To Use It";
+		image = "../../images/badges/expert.jpg"
+		description = "You're an expert! <br> <br> It has reached the final level and used several benefits! <br> <br> To prove our thanks, we will deliver a present in your home! Click the button below and confirm your data!";
+		buttonFlag = 0;
+		buttonLink = "";
+		break;
+
+
+
 		default:
 		header = "Desculpe";
 		title = "Desconto Não Encontrado";
@@ -294,7 +420,7 @@ getOCCSpecificProductFromCollection(productCollection, id).then(function(res){
 	listPriceVoucherClicked = res.items[0].listPrice;
 	voucherValueVoucherClicked = res.items[0].voucherValue;
 
-	console.log(displayNameVoucherClicked);
+console.log(displayNameVoucherClicked);
 console.log(listPriceVoucherClicked);
 console.log(voucherValueVoucherClicked);
 })
