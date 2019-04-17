@@ -2137,3 +2137,11 @@ height: auto;
      top: 40%;
      left: 35%;
 }
+
+.loadingVoucherGif{
+     background-image: url(../images/loadings/singleRing.gif);
+     background-repeat: no-repeat;
+     background-size: 43px;
+     background-position-x: 50%;
+     background-position-y: 50%;
+}
