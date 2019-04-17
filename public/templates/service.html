@@ -51,176 +51,6 @@
 
 </div>
 
-
-
-    <!-- RECORTE AQUI EC BITZ INTEGRATION BEGIN --------------------------------------------------------------------->
-
-        <!-- Engagement Cloud Calls (ecCalls) -->
-        <script type="text/javascript">
-            var ecAuthUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/km/api/latest/auth/authorize';
-            var ecInitialScreenUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/srt/api/v1/search/initialScreen?=';
-            var ecSearchUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/srt/api/latest/search/question';
-
-            var ecAuthStr = btoa("john.dunbar:oAd95456");
-
-            function fire() {
-                console.log("-- ecCall FIRED - " + ecAuthStr);
-            }
-
-            function ecAuthAuthSessAsk() {
-
-
-                var sQuestion = $('#ecSearchField')[0].value;
-                console.log("WILL SEARCH FOR '" + sQuestion + "'");
-
-                ////////////////////////////
-                // ecAuthentication (STEP 1)
-                ////////////////////////////
-                fetch(ecAuthUrl, {
-                        method: 'POST',
-                        headers: {
-                            "Authorization": "Basic " + ecAuthStr,
-                            "Accept": "application/json",
-                            "Content-type": "application/json",
-                            "localeId": "en_US",
-                            "siteName": "adc4-zevg-fa-ext"
-                        },
-                        body: ''
-                    })
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(data) {
-                        console.log('ecAuthentication succeeded with authenticationToken', data);
-                        var ecUserToken1 = JSON.parse(data.authenticationToken).userToken;
-                        console.log('ecUserToken1=' + ecUserToken1);
-
-                        ///////////////////////////
-                        // ecAuthorization (STEP 2)
-                        ///////////////////////////
-                        fetch(ecAuthUrl, {
-                                method: 'POST',
-                                headers: {
-                                    "integrationUserToken": ecUserToken1,
-                                    "Authorization": "Basic " + ecAuthStr,
-                                    "Accept": "application/json",
-                                    "Content-type": "application/json",
-                                    "localeId": "en_US",
-                                    "siteName": "adc4-zevg-fa-ext"
-                                },
-                                body: ''
-                            })
-                            .then(function(response) {
-                                return response.json();
-                            })
-                            .then(function(data) {
-                                console.log('ecAuthorization succeeded with authenticationToken', data);
-                                var ecUserToken2 = JSON.parse(data.authenticationToken).userToken;
-                                console.log('ecUserToken2=' + ecUserToken2);
-
-                                /////////////////////
-                                // ecSession (STEP 3)
-                                /////////////////////
-                                fetch(ecInitialScreenUrl, {
-                                        method: 'POST',
-                                        headers: {
-                                            "kmauthtoken": "{\"localeId\": \"en_US\", \"userToken\": \"" + ecUserToken2 + "\"}",
-                                            "Authorization": "Basic " + ecAuthStr,
-                                            "Accept": "application/json",
-                                            "Content-type": "application/json",
-                                            "localeId": "en_US",
-                                            "siteName": "adc4-zevg-fa-ext"
-                                        },
-                                        body: "{\r\n  \"transactionId\" : -470886747,\r\n  \"facetPriorTransactionId\" : 0,\r\n  \"locale\" : \"en_US\",\r\n  \"clientInfo\" : {\r\n    \"agentAddress\" : \"192.168.100.100\",\r\n    \"extSessionId\" : \"10\"\r\n  }\r\n }\r\n"
-                                    })
-                                    .then(function(response) {
-                                        return response.json();
-                                    })
-                                    .then(function(data) {
-                                        console.log('ecInitialScreen succeeded with data', data);
-
-                                        ////////////////////
-                                        // ecSearch (STEP 4)
-                                        ////////////////////    
-                                        fetch(ecSearchUrl + '?question=' + sQuestion, {
-                                                method: 'POST',
-                                                headers: {
-                                                    "kmauthtoken": "{\"localeId\": \"en_US\", \"userToken\": \"" + ecUserToken2 + "\"}",
-
-                                                    "Content-type": "application/json",
-                                                    "Accept": "application/json",
-                                                },
-                                                body: "{\n\t\"session\": \"eAE=7VZNaFxVFD4z+ZmmRpImRCOisRqqpeS9NE2KOguNiTGDkzR2WisGaW/mvZm89v3lvvsyb1yI\\r\\nLly48Weh6ELc2J0gFkTJomAF3SmKFBFXighCXbmv33lvZvKmyWizEor3cf/vOd8559773ffRNeoJ\\r\\nJB0se45muRuhJQXqCsrADALLc7VSUn/61pUDr/32+7V+osivvUFE47RGj5CJPINvjQyaQG+KjtEk\\r\\nWtN0nCroTZBAfTwe4zUiXjtFR1FPYt6gmQyUZTEwmeFWH/Io+SShrEKPkh63NihEPyBFWmPGjGtJ\\r\\np+kkFeHCobQLvjQrpjTdsqmttJrPCjs0L0+MvXv5r0vrsR8Q0zuI+dLbtAxTNv1fafRhHdLYh1nE\\r\\nQdKDHaRn1wIlRVk1pX75+NsfH7g+eSVLmeep23ItFflUW2J/B+DBMj2NfILOoDwLf56kBWSuTzLa\\r\\n0M2EgKLavVh7e1voQoSMA6WRRUawQS9Rlove2lGG7t8BfZpKTdAcIp4ShvqHYlPSO7O9QmAjjdjM\\r\\ngII0UH53oFmaxxd7158CalPzL5BsXJUclC6pNOTs7mFlz56iJZTLdAquwP1t+9uUAfh+zA90COU6\\r\\neXwS05DxGd4ZzkXsaSkB60uBNRQAZhQw+3eDSSuf2z2EnfeK19+wff/skYtriUCmQTt4lAJNe9RQ\\r\\nAI/GgT24m0fYK4nAhZhrOyBH2NpeWsFZfIKKVKA59BGU5t6kxKBew9xIm3rmiQCrbXDDWZQCx6GK\\r\\nvkDZ5tExBuqJj8sEwEoMM9A4sh3EAThyHYklu3g9Jx4AcRxJX31XbFpVoUzNcnxbW056YM9FK1Ce\\r\\nrCeCTBqZInUbQglFw8XzYlPoobJsfVEE60vCz0c+FB/gcY3HtcZ4T+6nL76849x3XZRdoP22J4wF\\r\\ncIsnC9Sn1qUZrHu2EfmPPR7D9Nf2oR5EzijKzZsVEdoKamc8EJJtahccLVgX0jS0ihe6sIVJ3i97\\r\\ntm2WuR1oBVedWDuPHkx64ZOvts6UXi/HluecmEIDRYMp44vwMQ8unN4LAHvGgrHJMZ12wxtnTvii\\r\\nbKl6gXqdxTVLBdwocmOVehwWUpRdLQBtci9o7UjZAnSVrBdN1jmPzWBKHAUhI2ShZP1LW+cObf5x\\r\\n6SKTPA/f9+ufVy8mpv5n5ctAvgs5F7K5d6PFI/+nvUeAb/MtkXCrh7fJYlZKUeeTHr3y/T3vfS3e\\r\\n76JMgboDHPTkbNe64XUGQodvhrpKICkzCRMTV65At7X+pApGkQ4YdVc4VvmUiDzXcywTl3kkRQst\\r\\nc/JFGm5fW+dLp2i2CDv0xl+n3qRQfb5Nb31RuIZtyvEbhlkFNA9VRNlUc56rhOWasnmbDxapvwJK\\r\\n82qhX3ArnqJ8G5hwhV0PrEBvLtIXGqtLpqv4v5GlpBOzI2AGPWlVLQg9E8JPsKSiocRXW7hVvaSk\\r\\n5Vaxbt9GY57v6HjkM2/4fvyu8s9ZJtkCkMzwaiyusbiWsG3+zW+e+2AwOGw3Wae3JUexHEU7X4eS\\r\\nqbbmX337nc8/m8YDhT9z/NcSNZ4CCLAdjNzU0CKPh3nwVk47XEfwpvbyaOAZxAOYhKjxdG8/gFPF\\r\\nRJV+wdGT5xRHqfmc6unnVIee5InkvbiT9bU2gTvYbRpDzrRGeSROsQvM+SmJyPf9CAVvdKa6cPXn\\r\\nHzCd8aO/Ab6EsAk=\\r\\n\",\n    \"transactionId\": 1170964575\n}"
-                                            })
-                                            .then(function(response) {
-                                                console.log(response);
-                                                return response.json();
-                                            })
-                                            .then(function(data) {
-                                                console.log('ecSearch succeeded with results=', data);
-                                                ecRenderAnswers(data.results.results[0].resultItems);
-                                            })
-                                    })
-                                    .catch(function(error) {
-                                        console.log('Request failed', error);
-                                    });
-                            });
-                    });
-            };
-
-            function ecRenderAnswers(aResultItems) {
-            /*var tituloTxn;
-            var descricaoTxn;
-            var imageTxn;*/
-              $.each(aResultItems, function(index,value){
-
-                var template = document.getElementsByClassName("service-profile")[0];
-                var container = document.getElementsByClassName("service-container")[0];
-                var row = template.cloneNode(true);
-
-
-                row.querySelectorAll(".service-profile_title")[0].innerHTML = value.title.snippets[0].text;
-                row.querySelectorAll(".service-profile_text")[0].innerHTML = value.textElements[0].snippets[0].text;
-                /*row.querySelectorAll(".balance-profile_time")[0].innerHTML = value.ProcessDt.substring(0,value.ProcessDt.search('T'));
-                row.querySelectorAll(".balance-profile_image")[0].src = imageTxn;*/
-
-                container.appendChild(row);
-                row.setAttribute("class","service-profile");
-            })
-            }
-
-            function ecBeginAPICalls() {
-                $("#ecSearchForm")[0].disabled = true;
-                $("#ecSearchField")[0].disabled = true;
-                $("#ecSearchButton")[0].disabled = true;
-            }
-
-            function ecEndAPICalls() {
-                $("#ecSearchForm")[0].disabled = false;
-                $("#ecSearchField")[0].disabled = false;
-                $("#ecSearchButton")[0].disabled = false;
-            }
-
-        </script>
-
-       
-
-        <!--  CAPTURE INPUT FIELD ENTER KEY using JQUERY -->
-        <script type="text/javascript">
-            $("#ecSearchField").keyup(function(event) {
-                if (event.keyCode === 13) {
-                    console.log("[ENTER] PRESSED");
-                    ecBeginAPICalls();
-                    ecAuthAuthSessAsk();
-                    ecEndAPICalls();
-                    return false;
-                }
-            });
-
-        </script>
-
-        <!-- RECORTE AQUI EC BITZ INTEGRATION END ---------------------------------------------------------------------->
-
 <!--MENU INFERIOR-->
 <div class="navbar secondary-background-color-app">
   <a href="voucher.html" class="fa fa-home menu-icon"></a>
@@ -233,6 +63,59 @@
 
 <script type="text/javascript" src="../scripts/apis.js"></script>
 <script type="text/javascript" src="../scripts/environment.js"></script>
+
+<!-- Engagement Cloud Calls -->
+<script type="text/javascript">
+
+    getAnswers($('#ecSearchField')[0].value).then(function(res){
+
+        $.each(res, function(index,value){
+
+            var template = document.getElementsByClassName("service-profile")[0];
+            var container = document.getElementsByClassName("service-container")[0];
+            var row = template.cloneNode(true);
+
+
+            row.querySelectorAll(".service-profile_title")[0].innerHTML = value.title.snippets[0].text;
+            row.querySelectorAll(".service-profile_text")[0].innerHTML = value.textElements[0].snippets[0].text;
+            /*row.querySelectorAll(".balance-profile_time")[0].innerHTML = value.ProcessDt.substring(0,value.ProcessDt.search('T'));
+            row.querySelectorAll(".balance-profile_image")[0].src = imageTxn;*/
+
+            container.appendChild(row);
+            row.setAttribute("class","service-profile");
+        })
+
+    })
+
+    function ecBeginAPICalls() {
+        $("#ecSearchForm")[0].disabled = true;
+        $("#ecSearchField")[0].disabled = true;
+        $("#ecSearchButton")[0].disabled = true;
+    }
+
+    function ecEndAPICalls() {
+        $("#ecSearchForm")[0].disabled = false;
+        $("#ecSearchField")[0].disabled = false;
+        $("#ecSearchButton")[0].disabled = false;
+    }
+
+</script>
+
+
+
+<!--  CAPTURE INPUT FIELD ENTER KEY using JQUERY -->
+<script type="text/javascript">
+    $("#ecSearchField").keyup(function(event) {
+        if (event.keyCode === 13) {
+            console.log("[ENTER] PRESSED");
+            ecBeginAPICalls();
+            ecAuthAuthSessAsk();
+            ecEndAPICalls();
+            return false;
+        }
+    });
+
+</script>
 
 </body>
 
