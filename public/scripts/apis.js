@@ -593,6 +593,21 @@ function inputID(className){
 	});
 }
 
+/*Oracle Engagement Cloud APIs*/
+function getAnswer(question){
+	return 	$.ajax({
+		"async": true,
+		"crossDomain": true,
+		"url": "https://"+environmentName+"/getAnswers/"+question,
+		"method": "GET",
+		"headers": {
+			"content-type":"application/json"
+		}
+
+	}) 
+}
+
+
 
 /*Oracle Commerce Cloud APIs*/
 /*Get Product From Specific Collection*/

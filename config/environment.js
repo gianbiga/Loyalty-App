@@ -16,9 +16,14 @@ commerce = {
 	productCollection : "ofertasEspeciais"
 };
 
+engagement ={
+	environment : "adc4-zbia-fa-ext",
+	username : "john.dunbar",
+	password : "sVU56877"
+}
 
-basicAuth = function (){
-	return btoa(loyalty.username+":"+loyalty.password);
+basicAuth = function (subject){
+	return btoa(eval(subject+'.username')+":"+eval(subject+'.password'));
 }
 
 

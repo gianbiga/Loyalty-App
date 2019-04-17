@@ -23,8 +23,18 @@ module.exports = function (app) {
 	var loyaltyInstance = axios.create({
 		baseURL: "https://"+loyalty.environment+".oracledemos.com/salesApi/resources/latest",
 		headers: {
-			'authorization': "Basic "+env.basicAuth()+"",
+			'authorization': "Basic "+env.basicAuth('loyalty')+"",
 			'Content-Type': "application/json",
+			'Content-Type':"application/vnd.oracle.adf.resourceitem+json"
+		},
+		dataType  : "json"
+	})
+
+	//Create Base Path for Engagement Calls
+	var engagementInstance = axios.create({
+		baseURL: "https://"+engagement.environment+".oracledemos.com/",
+		headers: {
+			'authorization': "Basic "+env.basicAuth('engagement')+"",
 			'Content-Type':"application/vnd.oracle.adf.resourceitem+json"
 		},
 		dataType  : "json"
@@ -154,8 +164,73 @@ module.exports = function (app) {
 
 
 
+	//Engagement Cloud
 
 
+	app.get('/getAnswers/:question',function(req, res){
+
+		var ecAuthUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/km/api/latest/auth/authorize';
+	    var ecInitialScreenUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/srt/api/v1/search/initialScreen?=';
+	    var ecSearchUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/srt/api/latest/search/question';
+
+	    var ecAuthStr = basicAuth('engagement');
+
+        var sQuestion = req.params.question;
+        console.log("WILL SEARCH FOR '" + sQuestion + "'");
+
+
+        //1º Passo - Pegar Autorização
+        engagementInstance.post('/km/api/latest/auth/authorize')
+        .then(function(res1){
+
+        	var token = JSON.parse(res1.data.authenticationToken).userToken; 
+        	/*console.log(JSON.parse(res1.data.authenticationToken).userToken);*/
+
+ 
+
+        	//2º Passo - Iniciar Sessão
+
+        	//Coloca o token no Header do template da chamada
+        	axios.defaults.headers.common['integrationUserToken'] = token;
+
+        	engagementInstance.post('/srt/api/v1/search/initialScreen',{})
+        	.then(function(res2){
+
+    		/*console.log(res2.data.session);*/
+    		var sessionToken = res2.data.session;
+
+        		//3º Passo - Realizar Busca 
+
+        		//Coloca outro Header do template da chamada
+        		axios.defaults.headers.common['kmauthtoken'] = "{\"localeId\": \"en_US\", \"userToken\": \"" + token + "\"}";
+
+	        	engagementInstance.post('/srt/api/latest/search/question?question='+req.params.question, {
+	        		session : sessionToken
+	        	})
+	        	.then(function(res3){
+	    
+		        	console.log(res3.data.results.results[0].resultItems);
+		        	res.send(res3.data.results.results[0].resultItems);
+
+		        })
+		        .catch(function(err){
+		        	console.log(err);
+		        	res.send(err.data);
+		        })
+
+	        })
+	        .catch(function(err){
+	        	console.log(err);
+	        	res.send(err.data);
+	        })
+
+        })
+        .catch(function(err){
+        	console.log(err);
+        	res.send(err.data);
+        })
+
+	})
 
 
     module.exports = app;
