@@ -33,7 +33,7 @@
         <br>
         <form id="ecSearchForm">
              <input type="text" id="ecSearchField" name="ecSearchField" placeholder="Digite aqui sua busca"><br>
-            <input type="submit" class="hide" id="ecSearchButton" value="Buscar" onclick="console.log('[SUBMIT] CLICKED');ecBeginAPICalls();ecAuthAuthSessAsk();ecEndAPICalls();return false;">
+            <input type="submit" class="hide" id="ecSearchButton" value="Buscar" onclick="console.log('[SUBMIT] CLICKED');ecBeginAPICalls();answerCards();ecEndAPICalls();return false;">
         </form>
         <hr>
         <ul id="ecResultList">
@@ -67,25 +67,26 @@
 <!-- Engagement Cloud Calls -->
 <script type="text/javascript">
 
-    getAnswers($('#ecSearchField')[0].value).then(function(res){
+    function answerCards(){
 
-        $.each(res, function(index,value){
+        getAnswer($('#ecSearchField')[0].value).then(function(res){
 
-            var template = document.getElementsByClassName("service-profile")[0];
-            var container = document.getElementsByClassName("service-container")[0];
-            var row = template.cloneNode(true);
+            $.each(res, function(index,value){
 
+                var template = document.getElementsByClassName("service-profile")[0];
+                var container = document.getElementsByClassName("service-container")[0];
+                var row = template.cloneNode(true);
 
-            row.querySelectorAll(".service-profile_title")[0].innerHTML = value.title.snippets[0].text;
-            row.querySelectorAll(".service-profile_text")[0].innerHTML = value.textElements[0].snippets[0].text;
-            /*row.querySelectorAll(".balance-profile_time")[0].innerHTML = value.ProcessDt.substring(0,value.ProcessDt.search('T'));
-            row.querySelectorAll(".balance-profile_image")[0].src = imageTxn;*/
+                row.querySelectorAll(".service-profile_title")[0].innerHTML = value.title.snippets[0].text;
+                row.querySelectorAll(".service-profile_text")[0].innerHTML = value.textElements[0].snippets[0].text;
+                /*row.querySelectorAll(".balance-profile_time")[0].innerHTML = value.ProcessDt.substring(0,value.ProcessDt.search('T'));
+                row.querySelectorAll(".balance-profile_image")[0].src = imageTxn;*/
 
-            container.appendChild(row);
-            row.setAttribute("class","service-profile");
-        })
-
-    })
+                container.appendChild(row);
+                row.setAttribute("class","service-profile");
+            })
+        })   
+    }
 
     function ecBeginAPICalls() {
         $("#ecSearchForm")[0].disabled = true;
@@ -109,7 +110,8 @@
         if (event.keyCode === 13) {
             console.log("[ENTER] PRESSED");
             ecBeginAPICalls();
-            ecAuthAuthSessAsk();
+            answerCards();
+            console.log('gian')
             ecEndAPICalls();
             return false;
         }
