@@ -25,6 +25,11 @@
     <img src="../images/logo.png" class="logo2">
   </header>
 
+
+<div class="loadingScreen">
+    <img src="../images/loadings/doubleRing.gif" class="loadingGif">    
+</div>
+
  <br>
         <br>
         <br>
@@ -33,7 +38,7 @@
         <br>
         <form id="ecSearchForm">
              <input type="text" id="ecSearchField" name="ecSearchField" placeholder="Digite aqui sua busca"><br>
-            <input type="submit" class="hide" id="ecSearchButton" value="Buscar" onclick="console.log('[SUBMIT] CLICKED');ecBeginAPICalls();answerCards();ecEndAPICalls();return false;">
+            <input type="submit" class="hide" id="ecSearchButton" value="Buscar" onclick="answerCards()">
         </form>
         <hr>
         <ul id="ecResultList">
@@ -69,6 +74,11 @@
 
     function answerCards(){
 
+        $("#ecSearchForm")[0].disabled = true;
+        $("#ecSearchField")[0].disabled = true;
+        $("#ecSearchButton")[0].disabled = true;
+        $(".loadingScreen").toggle();
+
         getAnswer($('#ecSearchField')[0].value).then(function(res){
 
             $.each(res, function(index,value){
@@ -85,19 +95,12 @@
                 container.appendChild(row);
                 row.setAttribute("class","service-profile");
             })
-        })   
-    }
-
-    function ecBeginAPICalls() {
-        $("#ecSearchForm")[0].disabled = true;
-        $("#ecSearchField")[0].disabled = true;
-        $("#ecSearchButton")[0].disabled = true;
-    }
-
-    function ecEndAPICalls() {
-        $("#ecSearchForm")[0].disabled = false;
-        $("#ecSearchField")[0].disabled = false;
-        $("#ecSearchButton")[0].disabled = false;
+        }).then(function(){
+            $("#ecSearchForm")[0].disabled = false;
+            $("#ecSearchField")[0].disabled = false;
+            $("#ecSearchButton")[0].disabled = false;
+            $(".loadingScreen").toggle();
+        })
     }
 
 </script>

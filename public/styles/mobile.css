@@ -2122,3 +2122,18 @@ height: auto;
 .flag-dropdown{
      
 }
+
+.loadingScreen{
+    background: #2727274d;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: none;
+}
+
+.loadingGif{
+     position: absolute;
+     width: 100px;
+     top: 40%;
+     left: 35%;
+}

@@ -165,8 +165,6 @@ module.exports = function (app) {
 
 
 	//Engagement Cloud
-
-
 	app.get('/getAnswers/:question',function(req, res){
 
 		var ecAuthUrl = 'https://adc4-zevg-fa-ext.oracledemos.com/km/api/latest/auth/authorize';
@@ -185,8 +183,6 @@ module.exports = function (app) {
 
         	var token = JSON.parse(res1.data.authenticationToken).userToken; 
         	/*console.log(JSON.parse(res1.data.authenticationToken).userToken);*/
-
- 
 
         	//2º Passo - Iniciar Sessão
 
