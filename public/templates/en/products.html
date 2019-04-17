@@ -58,14 +58,16 @@
         <h1 id="prod-header" class="popup-voucher-header">Sanduíche de Carne Bovina</h1>
       </header>
       <div class="modal-voucher-middle">
-        <img id="prod-img" src="../../images/badges/promobigmc.jpg" class="popup-voucher-product">
+        <img id="prod-img" src="../images/badges/promobigmc.jpg" class="popup-voucher-product">
         <h2 id="prod-title" class="popup-voucher-title">Big Mac</h2>
-        <p id="prod-desc" class="popup-product-desc">Click on the button below to activate this voucher</p>
+        <p id="prod-desc" class="popup-product-desc">Para ativar esse desconto, clique no botão abaixo:</p>
       </div>
       <footer class="modal-voucher-footer">
         <button id="prod-button" onclick="
+        this.disable = true; $('.button-voucher-activate3').addClass('loadingVoucherGif');$('#prod-button').html('');
          redeemPoints(memberNumber, pointType, displayNameVoucherClicked, voucherValueVoucherClicked, listPriceVoucherClicked).then(function(res){
           console.log(res);
+          this.disable = false;$('.button-voucher-activate3').removeClass('loadingVoucherGif');$('#prod-button').html('Activate Voucher')
             document.getElementById('popup').style.display='none';
 
             /*Verifica os vouchers gerados por essa transação de redeem e pega o id deles*/
@@ -75,7 +77,7 @@
             })
 
          })
-        " class="button-voucher-activate3">Activate Voucher</button>
+        " class="button-voucher-activate3">Activate Voucher
       </footer>
     </div>
   </div>
