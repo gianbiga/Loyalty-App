@@ -608,7 +608,6 @@ function getAnswer(question){
 }
 
 
-
 /*Oracle Commerce Cloud APIs*/
 /*Get Product From Specific Collection*/
 function getOCCProductsFromCollection(collectionName){
@@ -659,7 +658,7 @@ function insertCartOCC(productId) {
 	$.ajax({
 		"async": true,
 		"crossDomain": true,
-		"url": "https://ucf4-occ0077-occ.oracledemos.com/ccstoreui/v1/login",
+		"url": "https://"+OCCenvironment+".oracledemos.com/ccstoreui/v1/login",
 		"method": "POST",
 		"headers": {
 			"content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -671,7 +670,7 @@ function insertCartOCC(productId) {
 		$.ajax({
 			"async": true,
 			"crossDomain": true,
-			"url": "https://ucf4-occ0077-occ.oracledemos.com/ccstoreui/v1/orders/current",
+			"url": "https://"+OCCenvironment+".oracledemos.com/ccstoreui/v1/orders/current",
 			"method": "POST",
 			"headers": {
 				"Authorization": "Bearer " + response.access_token,
