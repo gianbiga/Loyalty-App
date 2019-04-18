@@ -37,7 +37,7 @@
         <br>
         <br>
         <form id="ecSearchForm">
-             <input type="text" id="ecSearchField" name="ecSearchField" placeholder="Search here"><br>
+             <input type="text" id="ecSearchField" name="ecSearchField" placeholder="Any Troubles?"><br>
             <input type="submit" class="hide" id="ecSearchButton" value="Buscar" onclick="answerCards()">
         </form>
         <hr>
@@ -79,9 +79,9 @@
         $("#ecSearchButton")[0].disabled = true;
         $(".loadingScreen").toggle();
         $(".service-profile:not(:first)").remove();
-
+        
         getAnswer($('#ecSearchField')[0].value).then(function(res){
-            $(".service-container").empty()
+            
             $.each(res, function(index,value){
 
                 var template = document.getElementsByClassName("service-profile")[0];
