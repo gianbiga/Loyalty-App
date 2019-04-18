@@ -78,9 +78,10 @@
         $("#ecSearchField")[0].disabled = true;
         $("#ecSearchButton")[0].disabled = true;
         $(".loadingScreen").toggle();
-
+        $(".service-profile:not(:first)").remove();
+        
         getAnswer($('#ecSearchField')[0].value).then(function(res){
-
+            
             $.each(res, function(index,value){
 
                 var template = document.getElementsByClassName("service-profile")[0];
