@@ -276,7 +276,7 @@ function productPopup(product, id){
 		break;
 
 		case 'different_en':
-		header = "Different";
+		header = "Secret";
 		title = "How To Use It";
 		image = "../../images/badges/secret.jpg"
 		description = "You have not unlocked this discount yet! Earn more points to open this benefit!";
