@@ -34,6 +34,13 @@ function productPopup(product, id){
 		actButton.classList.add("hide");
 		document.getElementById("prod-img").classList.remove("color_disabled");
 	}
+	//If this is a "secret_en" discount
+	if((document.getElementById(id).getElementsByTagName("span")[0].getAttribute("class")).search("secret_en")>0){
+		product = "different_en";
+		actButton.classList.add("hide");
+		document.getElementById("prod-img").classList.remove("color_disabled");
+	}
+
 
 	//If this discount was already checked
 	if((document.getElementById(id).getElementsByTagName("span")[0].getAttribute("class")).search("check")>0){
@@ -272,7 +279,7 @@ function productPopup(product, id){
 		header = "Different";
 		title = "How To Use It";
 		image = "../../images/badges/secret.jpg"
-		description = "You have already used the discounts of this level! <br> <br> Advance to the next steps and gain other benefits!";
+		description = "You have not unlocked this discount yet! Earn more points to open this benefit!";
 		buttonFlag = 0;
 		buttonLink = "";
 		break;
@@ -385,14 +392,16 @@ console.log(buttonLink);
 
 
 function getId(title) {
-	var resArr = getProductsJSON.items.filter(
-		function(val)
-			{return val.displayName === title});
-	if (resArr.length > 0) {
-		return resArr[0].id;
-	}
-	else 
-		return null;
+	getOCCProductsFromCollection(productCollection).then(function(res){
+		var resArr = res.items.filter(
+			function(val)
+				{return val.displayName === title});
+		if (resArr.length > 0) {
+			return resArr[0].id;
+		}
+		else 
+			return null;
+	})
 }
 
 function voucherPopup(header, title, image, id){

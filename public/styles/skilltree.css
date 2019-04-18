@@ -231,6 +231,11 @@ background-image: url(
     ../images/badges/secret.png) !important; 
 }
 
+.secret_en{
+background-image: url(
+    ../images/badges/secret.png) !important; 
+}
+
 .check{
 background-image: url(
     ../images/badges/check2.png) !important; 

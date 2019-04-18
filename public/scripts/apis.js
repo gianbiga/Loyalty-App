@@ -665,7 +665,7 @@ function insertCartOCC(productId) {
 		},
 		"data": "grant_type=password&username=" + user + "&password="+pass
 	}).done(function (response) {
-		//console.log( "respostaLogin: ", response);
+		console.log( "respostaLogin: ", response);
 		localStorage.setItem("access_token",response.access_token);    
 		$.ajax({
 			"async": true,
