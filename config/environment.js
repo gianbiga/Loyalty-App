@@ -6,7 +6,7 @@ var btoa = require('btoa');
 loyalty = {
 	environment : "adc4-zbia-fa-ext",
 	username : "john.dunbar",
-	password : "sVU56877",
+	password : "Azo93769",
 	loyaltyProgram : "Programa de Fidelidade",
 	pointType : "Pontos"
 };
@@ -19,7 +19,7 @@ commerce = {
 engagement ={
 	environment : "adc4-zbia-fa-ext",
 	username : "john.dunbar",
-	password : "sVU56877"
+	password : "Azo93769"
 }
 
 basicAuth = function (subject){
