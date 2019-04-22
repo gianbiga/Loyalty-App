@@ -5,7 +5,7 @@ var memberNumber = localStorage.getItem("MemberID");
 /*LOYALTY ENVIRONMENT*/
 var environment = "adc4-zbia-fa-ext";
 var username = "john.dunbar";
-var password = process.env.envPassword;
+var password = "Azo93769";
 var loyaltyProgram = "Programa de Fidelidade";
 var pointType = "Pontos";
 
