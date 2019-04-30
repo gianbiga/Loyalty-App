@@ -112,11 +112,7 @@
 <script type="text/javascript">
     $("#ecSearchField").keyup(function(event) {
         if (event.keyCode === 13) {
-            console.log("[ENTER] PRESSED");
-            ecBeginAPICalls();
             answerCards();
-            console.log('gian')
-            ecEndAPICalls();
             return false;
         }
     });
